@@ -1,0 +1,3 @@
+scp -r death@192.168.1.44:/home/death/rockyou.txt C:\Users\yasha\Desktop\
+
+in linux to window

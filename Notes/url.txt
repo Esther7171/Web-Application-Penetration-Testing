@@ -1,0 +1,33 @@
+How URL works/Component of URL
+
+What is URL
+
+URL is Uniform resource locator its work like an address on internet 
+
+Components
+
+http://www.example.com:443/doc/blogs?files=abc#example
+
+1. http = its Protocol/Scheme (hyper text transfer protocol). It tells us we doing any kind of work in Html format and it's responsible for any kind of data interchange.
+
+we have other protocol such as
+Ftp = file transfer protocol, that responsible for file transfer.
+Smtp = simple mail transfer protocol , to interchange mail
+
+2. .com = we called it TLD (Top Level Domain)
+
+example = .com = commercial
+	  .edu = educational purpose
+	  .org = organization (it work as non profile)
+	  .in = India
+
+Type of TLD
+1. gtlb = generic top level domain
+2. stld = sponserd top level domain
+3. cctld = country code top level domain
+
+3. Example = second level domain
+
+4. www. = subdomain , we can save wesite im different part for different purpose
+
+

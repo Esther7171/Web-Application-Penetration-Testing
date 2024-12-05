@@ -1,0 +1,68 @@
+curl http://10.10.117.17 -H User-Agent: C  -L
+
+
+To view / inspect website code 
+
+$ curl https://gicseh.com/
+
+To view hearder information
+$ curl -I https://gicseh.com/
+
+To save with custom name
+$ curl -o gicseh.html https://gicseh.com/
+
+To save file with default name 
+
+$ curl -O https://gicseh.com/
+
+To see all connection from curl  -v for verbose
+
+$ curl -Iv https://gicseh.com/
+
+TO see torubleshoot ssl   like badssl
+
+curl -k http://basddl.com
+
+dummy api.com to check Api 
+$ curl http://example.com/api/.. [1-5] it give us 1 thorugh 5 detail of json
+
+Send post request with curl
+
+$ curl -d 
+
+Modify header 
+$ curl http://abc.com/ -H "Origion: hii"
+
+Add method to get req
+
+$ curl -X POST	 http://abc.com
+
+Header and post manuplation
+
+curl --header "HOST: example.com" http://127.0.0.1 
+curl --resolve example.com:443:127.0.0.1 https://example.com
+curl --connect-to example.com:443:host-47.example.com:443 https://example.com\
+
+protocol 
+curl telnet://localhosts:4317
+
+curl dict://dict.org/d:dog   dict dictonary
+
+send email with curl
+
+email.txt 
+FROM : 
+TO :
+Subject:
+Date:
+
+
+dear meow
+welc ......
+
+
+curl smtp://mail.example.com --mail-from myselfy@email.com --mail-rcpt target@email.com --upload-file email.txt
+
+
+
+

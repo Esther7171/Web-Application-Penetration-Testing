@@ -1,0 +1,32 @@
+$ Signaling ss7
+1.Protocols Signaling messages 
+2.signaling introduction
+3.types of signaling
+4.signaling elements
+5.ss7 protocol stack
+6.Signaling modes
+
+Signaling 
+means transfer of info and instructions relevants to control and monitortelephony connection
+
+Signaling types in GSM
+signaling in GSM is a Trsnsfer of related to control and supervision of telephony connection
+
+              signaling
+
+   1. subscriber loop signaling   2. inter-exchange signaling
+ 
+               siganling networks 
+the basic signaling network concit of the following elements 
+-signaling point (sp)
+-originating points(op)‌
+-destination point (dp)
+-signaliing transfer point (stp)
+-signaling link (sl)
+-signaling link set (sls)
+-signaling route (sr)
+-signaling route set (srs)
+
+
+
+     

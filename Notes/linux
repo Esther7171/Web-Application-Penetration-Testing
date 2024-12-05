@@ -1,0 +1,12 @@
+free -mh ----------------> to check system memoery
+df -h /root          -----------> storage                         -h = human readable form
+
+
+
+
+tools
+stacer
+timeshift    ---> tocreate ur linux machinbackup
+gufw -----> firewall
+kdeconnect  ---------> phone connect 
+scrpy   (screen copy ) ---------> mirror phone

@@ -1,0 +1,27 @@
+1. df mean disk free
+
+$ df it show all but want to read
+
+$ df -h --> human readable formate
+$ df -H for gb
+$ df --si --> si fr system intract
+$ df -iH --> show inodes
+
+$ df -H --total
+$ df -h -t --> TYPES liker ext4
+
+$ df -H -a --> all
+
+
+
+2. du mean disk usage
+
+use -h to human
+
+du -h 
+du --si --> in gb
+
+du --si -s --> it show all summarise all and how big is it directory
+du /tmp  /root --si -s 
+
+du /tmp /root --si -s --total --> to see total of 2

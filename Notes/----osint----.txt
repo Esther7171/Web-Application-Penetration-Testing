@@ -1,0 +1,7 @@
+----osint----
+
+1.To gather information about pdf
+ => pdfinfo DOCUMENT.pdf  (sudo apt install poppler-utils)
+
+2.Photo EXIF Data
+ => exiftool IMAGE.jpg (sudo apt install libimage-exiftool-perl)

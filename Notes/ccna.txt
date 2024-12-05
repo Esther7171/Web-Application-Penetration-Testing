@@ -1,0 +1,9 @@
+wmic
+product get name
+product where b=name="" class uninstall
+y
+
+2 types of ram volatil=== increase of ram and data save 
+and non volitali == data not save
+rom == os save 
+ram==data

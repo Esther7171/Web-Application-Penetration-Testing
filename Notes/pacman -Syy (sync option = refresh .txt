@@ -1,0 +1,16 @@
+pacman -Syy (sync option = refresh data base)
+cat /etc/pacman.f/mirrorlist (where pacman connect)
+
+sudo pacman -Syu(syncronized and update)
+
+
+sudo pacman -S mdk4 (to install)
+sudo pacman -R mdk4 (to uninstall)
+
+search pkg
+sudo pacman -Ss pygame 
+
+useless pkg to see show
+pacman -Qdt
+
+sudo pacman -R 

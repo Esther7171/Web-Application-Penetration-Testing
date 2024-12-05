@@ -1,0 +1,4 @@
+nmap -p80 --script ipidseq -iR 1000
+nmap -sN zombi target ip 
+
+7893984097

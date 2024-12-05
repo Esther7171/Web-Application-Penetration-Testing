@@ -1,0 +1,6 @@
+open ettercap gui version
+
+select search to scan 
+tap on right (host list) of search to see people
+
+

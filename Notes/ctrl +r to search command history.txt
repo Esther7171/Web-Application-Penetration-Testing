@@ -1,0 +1,37 @@
+ctrl +r to search command history
+
+
+
+
+#!/bin/bash
+echo "hii"
+
+var="/etc/os-release"
+
+if grep -q "kali" $var || grep -q "Parrot" $var
+then
+sudo apt-get update -y
+
+elif grep -q "Arch" $var || grep -q "arch" $var
+then
+sudo pacman -Syu
+else
+exit
+fi
+
+
+var=/etc/os-release
+
+if grep -q "Parrot" $var
+then
+wlan0 name
+
+fi
+
+
+
+check 2 together
+
+
+if grep -q "kali" $var || grep -q "Parrot" $var
+then

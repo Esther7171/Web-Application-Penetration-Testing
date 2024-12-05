@@ -1,0 +1,41 @@
+
+zip file using gzip
+
+gzip "filename"  it save with extention of .gz
+
+   to extract we have two methods
+ 
+1. gzip -d "filename"
+2. gunzip "filename"
+
+
+Gzip do not compress directory
+
+we need to use tar to compress directory
+
+tar --> tap archive
+
+c : compress
+f : file
+x : extract
+t : list the content of archive
+v : verbosity
+
+tar -cvf etc_backup.tar  /etc
+         new folder   folder that we need to compress
+
+look inside tar file without extract
+
+tar -tf etc_backup.tar 
+
+
+
+tar command combine with gzip to compress it 
+we also can do tar and then pip it into gzip
+but do it directly
+ 
+tar -czvf etc_backup.gzip /etc
+z :  compress
+
+--extract 
+tar -xzvf etc_backup.gzip

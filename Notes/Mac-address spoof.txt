@@ -1,0 +1,18 @@
+------- spoof macaddress----
+
+
+macchanger -s wlan0 (current mac addrs)
+
+------- spoof macaddress----
+ifconfig wlan0 down
+macchanger -r wlan0  (-r random mac)
+ifconfig wlan0 up
+
+bring back 
+restart system
+or
+ifconfig wlan0 down
+macchanger -p wlan0  (-p for switch to permananet)
+
+
+macchanger -m(to give what u want) wlan0

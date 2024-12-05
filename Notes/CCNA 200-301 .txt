@@ -1,0 +1,56 @@
+CCNA 200-301 
+
+Network Devices
+
+# what is a Network ?
+
+	A computer NetworK is a digital telecommunication network which allows nodes to share resource.
+
+
+# what is Nodes ?
+
+  1) router
+  2) switch
+  3) Firewall
+  4) Server
+  5) Client
+
+
+$ Building A Network
+
+Let take a example :-		PC-1 <------------------------------------> PC-2 
+
+   We connected 2 PC together with cable it form a simple network. this two Nodes are connected they share resource and have a conversation with each other.
+
+# What is Network Client ?
+
+  A Client is..
+	A device that access a service Made Available by a server.
+
+  A server is..
+	A device that provides functions or services for clients.
+
+  The same device can be a client in some situations, and a server in other situations
+
+  for example -> laptop, desktop, mac,mobile
+
+
+$ Client & Server Relationship
+
+example :- PC-1 <--------------------------> PC-2
+
+
+A) PC-1 --------------------------------> PC-2
+    	 ask give me a image.jpg please,
+	  
+B) PC-1 <-------------------------------- PC-2
+		  Here you are
+
+
+In above Situation PC-1 Asking For a Service it acting as client and PC-2 providing ,So PC-2 is Acting as a Server Here.
+
+A <-------------------> B <--------------------> C
+
+My computer <------> Internet <---------> Youtube server
+
+

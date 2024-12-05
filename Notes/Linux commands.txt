@@ -1,0 +1,68 @@
+Linux commands
+
+ls ----> list storage
+kali@kali:~$ ls
+Desktop    Downloads  Pictures     Templates  Walkthrough  php      rootme
+Documents  Music      Raven-Storm  Videos     number       reports  snap
+
+cd ---> change directory
+kali@kali:~$ cd desktop
+
+
+1. Passwd
+
+kali@kali:~$ passwd
+to change passwd for user
+
+if u wanna change password for other user just add name of user whom u wanna change
+kali@kali:~$ passwd death
+
+2. sudo
+in linux two default users, “root” and “kali”
+as using root as beginner u could harm ur system .bez u have higher level of power
+
+we will use SUDO to elevated privileges to run, fortunately, command that need root power. the sudo command can overcome this problem.
+
+3. whoami 
+kali@kali:~$ whoami
+yash
+
+kali@kali:~$ sudo whoami
+root
+
+print whom u logged in as.
+
+Man
+man is a manual page to guide
+kali@kali:~$ man ls
+
+u can also know more about man's manual
+
+kali@kali:~$ man man
+
+Man pages contain not only information about user commands, but also documentation regarding
+system administration commands, programming interfaces, and more. The content of the manual
+is divided into sections that are numbered as follows:
+
+Section     Contents
+
+1.        User Commands
+2. 	  Programming interfaces for kernel system calls
+3. 	  Programming interfaces to the C library
+4. 	  Special files such as device nodes and drivers
+5. 	  File formats
+6. 	  Games and amusements such as screen-savers
+7. 	  Miscellaneous
+8. 	  System administration commands
+
+
+
+The Linux Filesystem
+
+Kali Linux adheres to the filesystem hierarchy standard (FHS),35 which provides a familiar and universal layout for all Linux users. The directories you will find most useful are:
+•/bin - basic programs (ls, cd, cat, etc.)
+•/sbin - system programs (fdisk, mkfs, sysctl, etc)
+•/etc - configuration files
+•/tmp - temporary files (typically deleted on boot)
+•/usr/bin - applications (apt, ncat, nmap, etc.)
+•/usr/share - application support and data files

@@ -1,0 +1,15 @@
+sudo in ubuntu
+1. open Terminal
+2. Type below command
+* root permision
+# su
+# apt install sudo  [optional install / updates sudo]
+
+3. Restart Vm
+
+Note 
+debain based system (ubuntu , kubuntu, debian etc)
+usermod -aG sudo {username}
+
+RedHat based system (RedHat , fedora, centos, etc)
+usermod -aG wheel {user}

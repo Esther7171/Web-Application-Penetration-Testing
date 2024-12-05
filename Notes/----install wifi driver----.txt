@@ -1,0 +1,22 @@
+----install wifi driver----
+
+https://github.com/Esther7171/kali-wifi-driver-and-wifi-hacking.git
+
+google search >> download compact/wireless/kali-linux >> website -> index of / sources >> search compact-wireless-2010-06-28.tar.bz2
+
+# cd Download
+# tar -xjvf compact-wireless-2010–06–26-p.tar.bz2
+# cd compact-wireless-2010-06-28-p
+# sudo su
+# make unload
+# make load
+
+--done------
+
+---driver for my tp-link--
+
+sudo apt install dkms git
+sudo apt install build-essential libelf-dev linux-headers-$(uname -r)
+git clone https://github.com/aircrack-ng/rtl8812au.git
+cd rtl88*
+sudo make dkms_install

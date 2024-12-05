@@ -1,0 +1,18 @@
+cron service that allow us to shedual and automate task  
+and crontab are file that we write command which task we need to automate and shedual
+
+
+we do all work in crontab
+
+cat /etc/crontab  location
+
+min hr day-of-mon month day-of-week
+
+for everday *
+
+crontab -l list jobs
+crontab -e create job
+
+
+30 4 * * * echo "4.30 each month each day it run and save " > /home/$USER/cron-test
+

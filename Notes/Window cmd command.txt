@@ -1,0 +1,92 @@
+---------- Windows-Shortcut -------------
+Windows + U = Open Ease of Access Center
+Windows + Tab = Open Task View
+Windows + B = Set Focus in Notification Area
+Windows + R = Run Dialog
+Windows + L = Lock Pc
+Windows + A = Open Action Center
+Windows + G = Open Windows Game bar
+Windows + C = Open copilot
+Windows + I = Open Windows setting
+Windows + M = Minimize All Windows
+Windows + T = Cycle Task Bar
+Windows + . = Open Emoji Panel
+Windows + V = Open Clipboard
+Windows + Ctrl + Enter = Open Narrator
+Windows + = = Open Magnifier
+
+------ Normal ----------
+Ctrl + Shift + Esc = Open Task Manager
+Alt + f4   = Exit Active app or Shutdown/..
+Alt + Tab  = Switch Between Apps
+Alt + Esc  = Cycle Through Apps
+Ctrl + Esc = Open Start
+Ctrl + S = Save
+Ctrl + C = Copy
+Ctrl + V = Paste
+Ctrl + Y = Redo
+Ctrl + N = New
+Ctrl + W = Close tab
+Ctrl + T = New tab
+Ctrl + O = Open
+Ctrl + X = Cut
+Ctrl + Z = Undo
+Ctrl + A = Select All
+Ctrl + = = Zoom In
+Ctrl + - = Zoom Out
+Ctrl + 0 = Zoom Reset
+
+
+
+------ 	WINDOWS CMD --------
+
+
+* cipher /E (encript folder files)
+------------------------------------
+# Creat hotsopt in pc :-
+$netsh wlan set hostednetwork mode=allow ssid=HotsoptName key=passwd 
+$netsh wlan start hostednetwork.
+$netsh wlan stop hostednetwork.
+--------------------------------------
+#hidde folder or files
+$Attrib +h +s +r foldername
+$Attrib -h -s -r foldername
+-------------------------------------
+$ipconfig
+--------------------------------
+# view install program
+$wmic product get name
+
+# uninstall program by cmd
+$wmic product where "name like" call uninstall /nointeractive
+----------------------------------------------
+ # creat a zip/rar = copy iteam inside them
+
+$copy /b "image.jpeg"+"nameOf.rar" "newImgName.jpeg"
+------------------------------------
+# wifi passwd show
+$netsh wlan show profile
+$netsh wlan show profile"wifi-name" key=clear | findstr"Key Content"
+----------------------------------
+for /F "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @if "%j" NEQ ""(echo SSID: %j & netsh wlam show profiles %j key=clear | findstr "KeyContent") & echo.
+
+$for /F "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @if "%j" NEQ ""(echo SSID: %j & netsh wlam show profiles %j key=clear | findstr "KeyContent") >> wifipaswd.txt
+------------------------------
+# notepad save as bat extension.
+
+@echo off
+setlocal enabledelayedexpansion
+for /F "tokens=2 delims: usebackq" %%F IN ('netsh wlan show profile %%a key^=clear ^| find "Key Content"') do (
+   set wifi_pawd=%%F 
+ )
+ echo %%a : !wifi_pwd!
+)
+-----------
+systeminfo
+---------------------
+$ explore .
+$ chkdsk (windo repair)
+$DISM /online /cleanup-image /checkhealth  (to repair iso window)
+
+********* scan files *******
+sfc /scannow

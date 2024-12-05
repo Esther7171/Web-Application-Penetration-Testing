@@ -1,0 +1,21 @@
+hide face and video in kali
+
+deface tool
+
+python3 -m pip install deface
+
+blur effect 
+# deface /home/death/img.jpg --replacewith blur -o image2.jpg
+
+# deface /home/death/img.jpg --replacewith moasic -o image2.jpg
+
+rplace face with new face
+
+# deface  /home/death/img.jpg --replacewith img --replaceimg face.png -o image2.jpg
+
+video
+# deface  /home/death/video.mp4 --replacewith mosaic -o video2.mp4
+
+
+
+

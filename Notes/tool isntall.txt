@@ -1,0 +1,24 @@
+tool isntall
+ 
+assestfinder
+ffuf
+gau
+gobuster
+waybackurls
+
+Use of gau
+
+ echo "pay.nl" | ./gau > gau.txt
+
+Use of WAYBACKURLS
+
+ echo "pay.nl" | ./waybackurls | tee -a way.txt
+
+Use of assestfinder 
+ 
+ assetfinder pay.nl | tee ass.txt   
+
+Use of gobuster
+
+ gobuster dir -u (url) -w (wordlist) /usr/share/wordlsit/dirbuster/directory-list-2.3-medium.txt
+

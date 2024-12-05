@@ -1,0 +1,3 @@
+hcxpcapngtool -o new_hash.hc22000 "meow.cap file enter here"
+
+hashcat.exe -m 22000 hash.hc22000 -a 3 --increment --increment-min 8 --increment-max 18 ?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d

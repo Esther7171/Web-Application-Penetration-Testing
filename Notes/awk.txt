@@ -1,0 +1,51 @@
+Id Name Salary Country
+1. raj   2000  India
+2. hex   3000  Africa
+3. Ben   4000  U.S.A
+4. Max   6000  U.k
+
+# if i have to print salary column 
+
+# awk '{print $3 }' filename like in my case it awk.txt
+
+# Print name and country only
+
+# awk '{print $2,$4}' awk.txt
+# It work in space seprated column
+
+# Print every last column 
+
+awk '{print $NF}' awk.txt
+
+example
+
+# ls -la | awk '{print $NF}'
+
+# Let take some name
+# cat -n like add number 
+
+
+# name list
+  
+aman 
+raj
+sun
+luffy
+ichigo
+garp
+zoro
+sanji
+niji
+yonji
+aizen
+yamamoto
+itachi
+obito
+naruto
+goku
+kira
+
+# Print this name with awk '{print NR, $0}' awk.txt
+
+# We also do like this awk '{print NR ":", $0}' awk.txt
+

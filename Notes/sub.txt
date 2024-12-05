@@ -1,0 +1,51 @@
+[91m
+                 ____        _     _ _     _   _____
+                / ___| _   _| |__ | (_)___| |_|___ / _ __
+                \___ \| | | | '_ \| | / __| __| |_ \| '__|
+                 ___) | |_| | |_) | | \__ \ |_ ___) | |
+                |____/ \__,_|_.__/|_|_|___/\__|____/|_|[0m[93m
+
+                # Coded By Ahmed Aboul-Ela - @aboul3la
+    
+[94m[-] Enumerating subdomains now for sbu.ac.in[0m
+[92m[-] Searching now in Baidu..[0m
+[92m[-] Searching now in Yahoo..[0m
+[92m[-] Searching now in Google..[0m
+[92m[-] Searching now in Bing..[0m
+[92m[-] Searching now in Ask..[0m
+[92m[-] Searching now in Netcraft..[0m
+[92m[-] Searching now in DNSdumpster..[0m
+[92m[-] Searching now in Virustotal..[0m
+[92m[-] Searching now in ThreatCrowd..[0m
+[92m[-] Searching now in SSL Certificates..[0m
+[92m[-] Searching now in PassiveDNS..[0m
+[91m[!] Error: Virustotal probably now is blocking our requests[0m
+[93m[-] Total Unique Subdomains Found: 28[0m
+[92mwww.sbu.ac.in[0m
+[92macademics.sbu.ac.in[0m
+[92maccounts.sbu.ac.in[0m
+[92madmin.sbu.ac.in[0m
+[92mwww.admin.sbu.ac.in[0m
+[92mapi-academics.sbu.ac.in[0m
+[92mapi-accounts.sbu.ac.in[0m
+[92mapi-dev-academics.sbu.ac.in[0m
+[92mapi-dev-accounts.sbu.ac.in[0m
+[92mapi-dev-examinations.sbu.ac.in[0m
+[92mapi-dev-fileserver.sbu.ac.in[0m
+[92mapi-dev-leads.sbu.ac.in[0m
+[92mapi-dev-masters.sbu.ac.in[0m
+[92mapi-dev-student.sbu.ac.in[0m
+[92mapi-examinations.sbu.ac.in[0m
+[92mapi-leads.sbu.ac.in[0m
+[92mapi-masters.sbu.ac.in[0m
+[92mapi-student.sbu.ac.in[0m
+[92mcrm.sbu.ac.in[0m
+[92mexaminations.sbu.ac.in[0m
+[92meyesack.sbu.ac.in[0m
+[92mapi.eyesack.sbu.ac.in[0m
+[92midentity.sbu.ac.in[0m
+[92mleads.sbu.ac.in[0m
+[92mmasters.sbu.ac.in[0m
+[92mstudent.sbu.ac.in[0m
+[92mstudents.sbu.ac.in[0m
+[92mwww.students.sbu.ac.in[0m

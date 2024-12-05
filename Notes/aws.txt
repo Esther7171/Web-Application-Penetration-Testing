@@ -1,0 +1,4 @@
+vm create --> ec2
+stor --> s3
+fun --> lamda
+netw --> vpc

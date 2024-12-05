@@ -1,0 +1,48 @@
+Vim
+
+1. create file with vim
+ $ vim file1
+
+2. TO edit file
+ $ press "i" on keyboard 
+ $ i = insert mode
+
+3. To save the file
+ step 1 . exit insert mode
+  $ press "esc" on keyboard
+
+ step 2. command mode
+  $ press ":" on keyboard to enter command mode
+  $ In command mode add "wq" mean write and quite / save and exit.
+
+
+-------------- 
+commands for vim
+1. if u dont want to save conent u just write now 
+   "q!" --> quite saving without made changes
+
+2. Go to last time
+   "Shift" + G 
+
+3. Go to 1st line
+   "gg"
+
+4. Reverse and forward search in file.
+   To search press "/" and add searching word
+   example : /hii
+   press "n" to view simpler search word in other lines
+
+   To search in reverse / bottom to top
+   press "?search0"
+
+5. press "*search" to search in top to bottom
+6. press "#" to seeach bottom to top
+
+7. replace a word in whole file
+press ":%s/want-to-replace/replace-with/g" -->/g for globaly 
+
+8.Undo and redo
+press "u"
+
+9. redo
+"ctrl"+ "r"

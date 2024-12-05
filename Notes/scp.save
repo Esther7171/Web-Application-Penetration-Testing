@@ -1,0 +1,11 @@
+Ssh & scp 
+
+scp : secure copy
+scp uses ssh , delivery machine run by ssh  
+
+usage:
+scp file.txt death:/home/death/
+
+scp [file] [username]:[location]
+
+

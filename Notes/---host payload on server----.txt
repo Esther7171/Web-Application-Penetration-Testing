@@ -1,0 +1,18 @@
+---host payload on server----
+
+1. on same network Python server.
+
+- python -m http.server 80
+
+
+2. on appache server.
+
+- /etc/init.d/appache2 start
+- sudo mv modile.apk /var/www/html/
+- cd /var/www/html 
+- ls -l 
+
+to open give ur ip address to search bar
+like 192.168.1.18/mobile.apk
+
+ 

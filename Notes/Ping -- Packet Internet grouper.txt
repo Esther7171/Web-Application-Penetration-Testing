@@ -1,0 +1,29 @@
+Ping --> Packet Internet grouper
+
+
+basic syntax
+
+ping 192.168.132.1
+
+if we got 0% packet loss then its working 
+if we got 100% packet loss then its mean not working
+
+1. Positive case
+My pc ----------------------------------> Server
+0% packret loss
+it use ICMP packet (Internet control Message Protocal) 
+
+2. Negative case
+My pc ----------------------------------> Server
+100% packet loss
+or  
+request timeout for icmp_seq
+or
+destination host unreachable
+
+
+reasons why we cant ping
+1. Firewall
+2. Server Down
+3. Our low connectivity or router issue 
+4. 

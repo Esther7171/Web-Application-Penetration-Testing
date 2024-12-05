@@ -1,0 +1,30 @@
+search Engine
+
+1. https://www.shodan.io/
+
+
+To view Website Infrastructure
+1. https://sitereport.netcraft.com/
+2. https://www.wappalyzer.com/
+
+Osint
+
+1. https://www.peekyou.com  --> find people by their name
+2. https://mattw.io/youtube-metadata --> find about youtube video details 
+3. dnsdumpster
+
+
+To Find Security Headers of website
+1. https://securityheaders.com
+
+
+
+To Identify and crack/decode
+1. cyberchif
+
+2. GTFObins => Bypass local security restrictions in misconfigured systems
+
+3. https://www.revshells.com/ => generate rev shell online
+
+
+4. crackstation => crack hash online

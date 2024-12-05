@@ -1,0 +1,69 @@
+*************************************************************************************************************
+*************************************************************************************************************
+
+ ----------------------------------------- W S L   L i n u x ------ ---------------------------------------
+
+*************************************************************************************************************
+*************************************************************************************************************
+
+
+#step1:
+
+ => win + r =  winver                      [ check if it window 11 so u can use wsl2 or in win 10 wslg ]
+ => win + r =  optionalfeature
+
+  => enable
+   * windows hypervison platform
+   * windows projected file system
+   * windows subsystem for linux
+   * virtual machine platform
+
+*************************************************************************************************************
+  
+#step2:
+
+ => Open PowerShell as Administrator (Start menu > PowerShell > right-click > Run as Administrator)
+
+*************************************************************************************************************
+
+#step3:   ----- enter this command --------
+
+ => dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestar
+
+ => dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+*************************************************************************************************************
+
+#Step4:        ----- Download the Linux kernel update package -----
+
+ => open browser past
+
+ => https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+
+ => wsl.exe --install or wsl.exe --update
+
+
+*************************************************************************************************************
+
+#step5:
+
+ => wsl --set-default-version 2
+
+
+*************************************************************************************************************
+
+#step6:
+   => open microsoft store download distro of ur choice
+
+
+*************************************************************************************************************
+
+#step7 :
+
+$creat user pass
+$sudo apt-get update && sudo apt-get upgrade
+$sudo apt install kali-desktop-xfce -y
+$sudo apt install xrdp -y
+$ sudo service xrdp start > ip add connect rdp / kex
+
+*************************************************************************************************************

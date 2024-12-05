@@ -1,0 +1,5 @@
+netcat used for establishing connection open port
+
+
+
+nc -l 550 
