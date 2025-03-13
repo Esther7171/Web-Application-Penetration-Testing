@@ -3,6 +3,7 @@
 ![OWASP Logo](https://github.com/user-attachments/assets/fbb2cb70-6a10-41f6-82d0-2fa47a66c2d6)
 
 ## 📌 Overview
+
 Welcome to the **Web Application Penetration Testing** repository! This serves as a comprehensive guide to mastering **Web Application Security**, covering everything from foundational concepts to advanced exploitation techniques. This repository is designed for:
 
 - **Cybersecurity professionals** enhancing their penetration testing skills.
@@ -12,7 +13,10 @@ Welcome to the **Web Application Penetration Testing** repository! This serves a
 
 With hands-on labs sourced from various platforms, this repository will help you gain practical experience in **Web Application Security** and **Bug Bounty Hunting**.
 
+---
+
 ## 🎯 Learning Objectives
+
 - Learn Web Application Penetration Testing step by step.
 - Understand the **OWASP Top 10 (2025)** vulnerabilities with real-world examples.
 - Explore different attack techniques for **server-side** and **client-side** vulnerabilities.
@@ -21,7 +25,51 @@ With hands-on labs sourced from various platforms, this repository will help you
 
 ---
 
+## 📖 Learning Path
+
+Getting started with web security can feel overwhelming, but the key is to learn step by step. We recommend progressing through topics at your own pace, practicing with labs as you go. If a challenge feels too tough, move forward and revisit it later with fresh insights. For structured guidance, check out our curated learning paths below.
+
+### 🔥 **Server-Side Vulnerabilities**
+- [ ] Authentication Bypass
+- [ ] SQL Injection (SQLi)
+- [ ] Path Traversal
+- [ ] Command Injection
+- [ ] Business Logic Vulnerabilities
+- [ ] Information Disclosure
+- [ ] Access Control Issues
+- [ ] File Upload Vulnerabilities
+- [ ] Race Conditions
+- [ ] Server-Side Request Forgery (SSRF)
+- [ ] XML External Entity (XXE) Injection
+- [ ] NoSQL Injection
+- [ ] API Security Testing
+- [ ] Web Cache Deception
+
+### ⚡ **Client-Side Vulnerabilities**
+- [ ] Cross-Site Scripting (XSS)
+- [ ] Cross-Site Request Forgery (CSRF)
+- [ ] Cross-Origin Resource Sharing (CORS) Misconfigurations
+- [ ] Clickjacking
+- [ ] DOM-Based Vulnerabilities
+- [ ] WebSockets Security Issues
+
+### 🚀 **Advanced Topics**
+- [ ] Insecure Deserialization
+- [ ] Web LLM (Large Language Model) Attacks
+- [ ] GraphQL API Security Testing
+- [ ] Server-Side Template Injection (SSTI)
+- [ ] Web Cache Poisoning
+- [ ] HTTP Host Header Attacks
+- [ ] HTTP Request Smuggling
+- [ ] OAuth Authentication Flaws
+- [ ] JWT (JSON Web Token) Attacks
+- [ ] Prototype Pollution
+- [ ] Essential Pentesting Skills
+
+---
+
 ## 🌍 OWASP Top 10 (2025) - Key Vulnerabilities
+
 This repository provides an in-depth analysis of the latest **OWASP Top 10** vulnerabilities to ensure you understand modern web security threats.
 
 ### 🔹 A01:2021 - Broken Access Control
@@ -62,55 +110,17 @@ This repository provides an in-depth analysis of the latest **OWASP Top 10** vul
 ---
 
 ## 🛠️ Web-Based Vulnerabilities
+
 Beyond OWASP Top 10, this repository covers a broad range of **server-side and client-side security risks**.
-
-### 🔥 **Server-Side Vulnerabilities**
-- [ ] SQL Injection (SQLi)
-- [ ] Authentication Bypass
-- [ ] Path Traversal
-- [ ] Command Injection
-- [ ] Business Logic Vulnerabilities
-- [ ] Information Disclosure
-- [ ] Access Control Issues
-- [ ] File Upload Vulnerabilities
-- [ ] Race Conditions
-- [ ] Server-Side Request Forgery (SSRF)
-- [ ] XML External Entity (XXE) Injection
-- [ ] NoSQL Injection
-- [ ] API Security Testing
-- [ ] Web Cache Deception
-
-### ⚡ **Client-Side Vulnerabilities**
-- [ ] Cross-Site Scripting (XSS)
-- [ ] Cross-Site Request Forgery (CSRF)
-- [ ] Cross-Origin Resource Sharing (CORS) Misconfigurations
-- [ ] Clickjacking
-- [ ] DOM-Based Vulnerabilities
-- [ ] WebSockets Security Issues
-
-### 🚀 **Advanced Topics**
-- [ ] Insecure Deserialization
-- [ ] Web LLM (Large Language Model) Attacks
-- [ ] GraphQL API Security Testing
-- [ ] Server-Side Template Injection (SSTI)
-- [ ] Web Cache Poisoning
-- [ ] HTTP Host Header Attacks
-- [ ] HTTP Request Smuggling
-- [ ] OAuth Authentication Flaws
-- [ ] JWT (JSON Web Token) Attacks
-- [ ] Prototype Pollution
-- [ ] Essential Pentesting Skills
 
 ---
 
 ## 📚 Learning Resources & Labs
+
 - Hands-on practice with **TryHackMe, HackTheBox, PortSwigger Web Academy, OWASP Juice Shop, DVWA, and more**.
 - Practical labs demonstrating real-world attack scenarios.
 - Step-by-step exploitation and mitigation guides.
 
 ---
 
-## 📢 Contributions & Community
-This repository thrives on community contributions. If you have new techniques, labs, or insights to share, feel free to contribute and help the cybersecurity community grow! 🔥
 
-> **Stay curious, stay ethical, and keep learning!** 🚀
