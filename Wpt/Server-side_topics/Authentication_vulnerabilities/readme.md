@@ -18,6 +18,7 @@ Authentication vulnerabilities are critical due to their direct impact on securi
 <div align="center">
   <img src="https://github.com/user-attachments/assets/5481c1ac-cbcd-4611-85ce-ccfb50697a28"></img>
 </div>
+
 ## What is Authentication?
 
 Authentication verifies the identity of a user or client attempting to access a system. Because websites are accessible to a global audience, strong authentication mechanisms are fundamental to web security.
