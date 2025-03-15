@@ -1,4 +1,5 @@
-# Broken Authentication / Authentication Vulnerabilities
+# <div align="center">Broken Authentication / Authentication Vulnerabilities</div>
+
 
 Authentication vulnerabilities can allow attackers to gain access to sensitive data and functionality. They also expose additional attack surfaces for further exploits. Understanding these vulnerabilities is crucial for strengthening authentication mechanisms and mitigating potential security risks.
 
@@ -14,9 +15,9 @@ Authentication vulnerabilities can allow attackers to gain access to sensitive d
 
 Authentication vulnerabilities are critical due to their direct impact on security. Attackers who exploit these weaknesses can gain unauthorized access, leading to data breaches, account takeovers, and further system compromises.
 
-![Password Reset Poisoning](https://github.com/user-attachments/assets/5481c1ac-cbcd-4611-85ce-ccfb50697a28)
-![Password Reset Poisoning](https://github.com/user-attachments/assets/c60668ba-c08f-49a6-a22e-2276d9564672)
-
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5481c1ac-cbcd-4611-85ce-ccfb50697a28"></img>
+</div>
 ## What is Authentication?
 
 Authentication verifies the identity of a user or client attempting to access a system. Because websites are accessible to a global audience, strong authentication mechanisms are fundamental to web security.
