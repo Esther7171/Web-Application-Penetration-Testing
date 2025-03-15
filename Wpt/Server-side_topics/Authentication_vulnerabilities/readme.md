@@ -1,106 +1,88 @@
-# Broken Authentication / Authentication Vulnerabilities.
+# Broken Authentication / Authentication Vulnerabilities
 
-Authentication vulnerabilities can allow attackers to gain access to sensitive data and functionality. They also expose additional attack surface for further exploits. For this reason, it's important to learn how to identify and exploit authentication vulnerabilities, and how to bypass common protection measures.
+Authentication vulnerabilities can allow attackers to gain access to sensitive data and functionality. They also expose additional attack surfaces for further exploits. Understanding these vulnerabilities is crucial for strengthening authentication mechanisms and mitigating potential security risks.
 
-In this section, we explain:
+## Topics Covered
 
-* The most common authentication mechanisms used by websites.
-* Potential vulnerabilities in these mechanisms.
-* Inherent vulnerabilities in different authentication mechanisms.
-* Typical vulnerabilities that are introduced by their improper implementation.
-* How you can make your own authentication mechanisms as robust as possible
+- Common authentication mechanisms used by websites
+- Potential vulnerabilities in these mechanisms
+- Inherent vulnerabilities in different authentication approaches
+- Typical security flaws introduced by improper implementation
+- Best practices for strengthening authentication security
 
-• Authentication vulnerabilities are usually critical because of the clear relationship between authentication and security. 
+## Importance of Authentication Security
 
-• Authentication vulnerabilities can allow attackers to gain access to sensitive data and functionality. They also expose additional attack surface for further exploits. For this reason, it's important to learn how to identify and exploit authentication vulnerabilities, and how to bypass common protection measures.![password-reset-poisoning](https://github.com/user-attachments/assets/5481c1ac-cbcd-4611-85ce-ccfb50697a28)
+Authentication vulnerabilities are critical due to their direct impact on security. Attackers who exploit these weaknesses can gain unauthorized access, leading to data breaches, account takeovers, and further system compromises.
 
-![password-reset-poisoning](https://github.com/user-attachments/assets/c60668ba-c08f-49a6-a22e-2276d9564672)
+![Password Reset Poisoning](https://github.com/user-attachments/assets/5481c1ac-cbcd-4611-85ce-ccfb50697a28)
+![Password Reset Poisoning](https://github.com/user-attachments/assets/c60668ba-c08f-49a6-a22e-2276d9564672)
 
-## What is authentication?
+## What is Authentication?
 
-Authentication is the process of verifying the identity of a user or client. Websites are potentially exposed to anyone who is connected to the internet. This makes robust authentication mechanisms integral to effective web security.
+Authentication verifies the identity of a user or client attempting to access a system. Because websites are accessible to a global audience, strong authentication mechanisms are fundamental to web security.
 
-There are three main types of authentication:
+### Types of Authentication
 
-* Something you **know**, such as a `password` or the answer to a security question. These are sometimes called "knowledge factors".
-* Something you **have**, This is a physical object such as a mobile phone or `security token`. These are sometimes called "possession factors".
-* Something you **are** or do. For example, your `biometrics` or `patterns` of behavior. These are sometimes called "inherence factors".
+1. **Knowledge-based (Something You Know)**: Passwords, security questions.
+2. **Possession-based (Something You Have)**: Security tokens, mobile devices.
+3. **Inherence-based (Something You Are)**: Biometrics, behavioral patterns.
 
-Authentication mechanisms rely on a range of technologies to verify one or more of these factors.
+## Authentication vs. Authorization
 
-## What is the difference between authentication and authorization?
+- **Authentication**: Confirms the identity of a user (e.g., verifying that "Carlos123" is the account owner).
+- **Authorization**: Determines what actions an authenticated user is allowed to perform (e.g., accessing sensitive data or administrative functionalities).
 
-Authentication is the process of verifying that a user is who they claim to be. Authorization involves verifying whether a user is allowed to do something.
+## How Do Authentication Vulnerabilities Arise?
 
-For example, authentication determines whether someone attempting to access a website with the username `Carlos123` really is the same person who created the account.
+Authentication vulnerabilities typically arise due to:
 
-Once `Carlos123` is authenticated, their permissions determine what they are authorized to do. For example, they may be authorized to access personal information about other users, or perform actions such as deleting another user's account.
+1. **Weak Authentication Mechanisms**: Inadequate brute-force protection, weak password policies.
+2. **Implementation Flaws**: Logic errors or coding mistakes that allow bypassing authentication controls.
 
+## Impact of Authentication Vulnerabilities
 
-## How do authentication vulnerabilities arise?
-Most vulnerabilities in authentication mechanisms occur in one of two ways:
+The consequences of authentication flaws can be severe, including:
 
-* The authentication mechanisms are weak because they fail to adequately protect against brute-force attacks.
+- Unauthorized access to sensitive data.
+- Account takeovers, leading to identity theft or financial fraud.
+- Privilege escalation attacks, where attackers gain administrative control.
+- Exposure of internal infrastructure and corporate systems.
 
-* Logic flaws or poor coding in the implementation allow the authentication mechanisms to be bypassed entirely by an attacker. This is sometimes called "broken authentication".
+## Vulnerabilities in Authentication Mechanisms
 
-In many areas of web development, logic flaws cause the website to behave unexpectedly, which may or may not be a security issue. However, as authentication is so critical to security, it's very likely that flawed authentication logic exposes the website to security issues.
+Authentication systems commonly contain distinct vulnerabilities in the following areas:
 
-## What is the impact of vulnerable authentication?
+1. **Password-based login**: Susceptible to brute-force attacks and credential stuffing.
+2. **Multi-factor authentication**: Weak implementation can allow bypassing security controls.
+3. **Other authentication mechanisms**: May introduce flaws specific to their design.
 
-The impact of authentication vulnerabilities can be severe. If an attacker bypasses authentication or brute-forces their way into another user's account, they have access to all the data and functionality that the compromised account has. If they are able to compromise a high-privileged account, such as a system administrator, they could take full control over the entire application and potentially gain access to internal infrastructure.
+### Vulnerabilities in Password-Based Login
 
-Even compromising a low-privileged account might still grant an attacker access to data that they otherwise shouldn't have, such as commercially sensitive business information. Even if the account does not have access to any sensitive data, it might still allow the attacker to access additional pages, which provide a further attack surface. Often, high-severity attacks are not possible from publicly accessible pages, but they may be possible from an internal page.
+Websites that use password-based authentication rely on a user-entered password as proof of identity. If an attacker can obtain or guess valid credentials, authentication security is compromised.
 
-## Vulnerabilities in authentication mechanisms
-A website's authentication system usually consists of several distinct mechanisms where vulnerabilities may occur. Some vulnerabilities are applicable across all of these contexts. Others are more specific to the functionality provided.
+#### Brute-Force Attacks
 
-1. Vulnerabilities in password-based login.
-2. Vulnerabilities in multi-factor authentication.
-3. Vulnerabilities in other authentication mechanisms.
+A brute-force attack involves systematically guessing credentials using automated tools and predefined wordlists. Attackers exploit weak password policies and predictable user behavior to enhance their success rates.
 
-# Vulnerabilities in password-based login
-For websites that adopt a password-based login process, users either register for an account themselves or they are assigned an account by an administrator. This account is associated with a unique username and a secret password, which the user enters in a login form to authenticate themselves.
+##### Brute-Forcing Usernames
 
-In this scenario, the fact that they know the secret password is taken as sufficient proof of the user's identity. This means that the security of the website is compromised if an attacker is able to either obtain or guess the login credentials of another user.
+- Usernames following predictable patterns (e.g., `firstname.lastname@company.com` or `admin`) are easier to guess.
+- Publicly visible usernames on profiles or error messages can aid attackers in compiling valid user lists.
 
-This can be achieved in a number of ways. The following sections show how an attacker can use brute-force attacks, and some of the flaws in brute-force protection. You'll also learn about the vulnerabilities in HTTP basic authentication.
+##### Brute-Forcing Passwords
 
-## Brute-force attacks
-A brute-force attack is when an attacker uses a system of trial and error to guess valid user credentials. These attacks are typically automated using wordlists of usernames and passwords. Automating this process, especially using dedicated tools, potentially enables an attacker to make vast numbers of login attempts at high speed.
+- Users often create weak or predictable passwords due to poor enforcement policies.
+- Enforcing strong password policies is crucial, but users tend to create variations of familiar passwords, making them susceptible to attacks.
 
-Brute-forcing is not always just a case of making completely random guesses at usernames and passwords. By also using basic logic or publicly available knowledge, attackers can fine-tune brute-force attacks to make much more educated guesses. This considerably increases the efficiency of such attacks. Websites that rely on password-based login as their sole method of authenticating users can be highly vulnerable if they do not implement sufficient brute-force protection.
+### Username Enumeration
 
-## Brute-forcing usernames
-Usernames are especially easy to guess if they conform to a recognizable pattern, such as an email address. For example, it is very common to see business logins in the format `firstname.lastname@somecompany.com`. However, even if there is no obvious pattern, sometimes even high-privileged accounts are created using predictable usernames, such as ``admin` or `administrator`.
+Username enumeration occurs when attackers determine valid usernames based on website responses, making brute-force attacks more efficient.
 
-During auditing, check whether the website discloses potential usernames publicly. For example, are you able to access user profiles without logging in? Even if the actual content of the profiles is hidden, the name used in the profile is sometimes the same as the login username. You should also check HTTP responses to see if any email addresses are disclosed. Occasionally, responses contain email addresses of high-privileged users, such as administrators or IT support.
+#### Indicators of Username Enumeration:
 
-## Brute-forcing passwords
-Passwords can similarly be brute-forced, with the difficulty varying based on the strength of the password. Many websites adopt some form of password policy, which forces users to create high-entropy passwords that are, theoretically at least, harder to crack using brute-force alone. This typically involves enforcing passwords with:
+1. **Distinct Error Messages**: If login failure messages differentiate between incorrect usernames and passwords, attackers can identify valid accounts.
+2. **HTTP Status Codes**: Differences in response codes can reveal valid usernames.
+3. **Response Time Discrepancies**: Websites that validate passwords only for existing usernames may introduce timing variations that attackers exploit.
 
-* A minimum number of characters
-* A mixture of lower and uppercase letters
-* At least one special character
+## Lab 1: [To be continued...]
 
-However, while high-entropy passwords are difficult for computers alone to crack, we can use a basic knowledge of human behavior to exploit the vulnerabilities that users unwittingly introduce to this system. Rather than creating a strong password with a random combination of characters, users often take a password that they can remember and try to crowbar it into fitting the password policy. For example, if `mypassword` is not allowed, users may try something like `Mypassword1!` or `Myp4$$w0rd` instead.
-
-In cases where the policy requires users to change their passwords on a regular basis, it is also common for users to just make minor, predictable changes to their preferred password. For example, `Mypassword1!` becomes `Mypassword1?` or `Mypassword2!`.
-
-This knowledge of likely credentials and predictable patterns means that brute-force attacks can often be much more sophisticated, and therefore effective, than simply iterating through every possible combination of characters.
-
-## Username enumeration
-Username enumeration is when an attacker is able to observe changes in the website's behavior in order to identify whether a given username is valid.
-
-Username enumeration typically occurs either on the login page, for example, when you enter a valid username but an incorrect password, or on registration forms when you enter a username that is already taken. This greatly reduces the time and effort required to brute-force a login because the attacker is able to quickly generate a shortlist of valid usernames.
-
-While attempting to brute-force a login page, you should pay particular attention to any differences in:
-
-* Status codes: During a brute-force attack, the returned HTTP status code is likely to be the same for the vast majority of guesses because most of them will be wrong. If a guess returns a different status code, this is a strong indication that the username was correct. It is best practice for websites to always return the same status code regardless of the outcome, but this practice is not always followed.
-
-* Error messages: Sometimes the returned error message is different depending on whether both the username AND password are incorrect or only the password was incorrect. It is best practice for websites to use identical, generic messages in both cases, but small typing errors sometimes creep in. Just one character out of place makes the two messages distinct, even in cases where the character is not visible on the rendered page.
-
-* Response times: If most of the requests were handled with a similar response time, any that deviate from this suggest that something different was happening behind the scenes. This is another indication that the guessed username might be correct. For example, a website might only check whether the password is correct if the username is valid. This extra step might cause a slight increase in the response time. This may be subtle, but an attacker can make this delay more obvious by entering an excessively long password that the website takes noticeably longer to handle.
-
-
-## Lab 1. 
