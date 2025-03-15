@@ -246,5 +246,4 @@ Use the discovered username and password to log in.
 
 ![image](https://github.com/user-attachments/assets/f68d9cfb-c124-4b57-b8e6-ca5139ef9a49)
 
-You have successfully completed the lab!
-
+We have successfully completed the lab!
