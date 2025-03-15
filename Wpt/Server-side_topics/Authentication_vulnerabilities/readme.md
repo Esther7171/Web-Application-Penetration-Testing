@@ -87,77 +87,6 @@ Username enumeration occurs when attackers determine valid usernames based on we
 
 3. **Response Times**: Authentication processes should take a uniform amount of time for all requests. If the response time varies—such as taking longer when validating a correct username before checking the password—attackers can infer valid usernames. This timing discrepancy can be further amplified by inputting excessively long passwords, making delays more noticeable.
 
-> Note: Make Sure u setup burpsuite correctly and link your browser with burp proxy, becouse all the request are gonna intercept in burpsuite with broweser
-
-## Lab 1: [Username enumeration via different responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses)
-
-In this lab scenario We have [Username](./Wpt/Server-side_topics/Authentication_vulnerabilities/Lab-credentials/Username-List.md) & [Password](./Wpt/Server-side_topics/Authentication_vulnerabilities/Lab-credentials/Password-List.md) provided this website is vulnerable to brute force attack.
-
-![image](https://github.com/user-attachments/assets/3e8cb5ca-e709-4af1-9566-5ad0719a2c1b)
-
-Let Access the Lab:
-
-
-Step 1: Click on My account
-![image](https://github.com/user-attachments/assets/25229db9-e1ea-4b36-8969-fe769b8a1615)
-
-After clicking on My account a login page will appear , As we dont no any credentials enter anything, example like :- `admin:admin`
-
-![image](https://github.com/user-attachments/assets/60884e42-af92-41c3-a3a1-87cbf3e170d4)
-
-Login and Capture this Request in Burpsuite. Open burpsuite > Intercept on.
-
-![image](https://github.com/user-attachments/assets/ef62c86d-59c0-4da0-9bc9-61883563097e)
-
-Here is my Request let click on `Action` then `send to Intruder`.
-
-![image](https://github.com/user-attachments/assets/91b02aed-24da-4267-9ceb-15620e4f9c34)
-
-At Intruder tab Select the username `admin` and `Add §`. to mark as attack postion
-
-![image](https://github.com/user-attachments/assets/a28c87c3-58c4-47f0-b49c-323efb4e990d)
-
-So it will mark like this:
-
-![image](https://github.com/user-attachments/assets/e5882c48-91c6-48c1-95a0-11abdc83ed3d)
-
-After that Click On payload tab Copy [Username](./Wpt/Server-side_topics/Authentication_vulnerabilities/Lab-credentials/Username-List.md) wordlist. In payload setting column Past wordlist list by clicking on `past` button.
-
-![image](https://github.com/user-attachments/assets/4146e469-9a04-4dfc-b945-d552a37a64f6)
-
-Start Attack
-
-![image](https://github.com/user-attachments/assets/b42ca8a9-d6e6-4ec5-923d-5a1507e7703a)
-
-When We clcik on Length column and examine the Length column in the results table. header to sort the results. Notice that one of the entries is longer than the others. Compare the response to this payload with the other responses. Notice that other responses contain the message Invalid username, but this response says Incorrect password. Make a note of the username in the Payload column.
-
-We got the username that have different lenght, now turn for password same process is repeat for grabbing password.
-
-Close the attack and go back to the Intruder tab. 
-
-Come to postion tab, click on Click `Clear §`, then change the username parameter to the username you just identified. Add a payload position to the password parameter. The result should look something like this:
-
-![image](https://github.com/user-attachments/assets/3fa0ded8-150e-42fc-a80d-81534273d387)
-
-In Payload tab click on clear to clear old wordlist
-
-![image](https://github.com/user-attachments/assets/b14236a6-5625-486c-a777-48c389ee2246)
-
-And past [Password](./Wpt/Server-side_topics/Authentication_vulnerabilities/Lab-credentials/Password-List.md) Wordlist.
-
-![image](https://github.com/user-attachments/assets/4e0b64bc-923a-43c6-a078-b716edfb2a5a)
-
-Start Attack
-
-![image](https://github.com/user-attachments/assets/1ee0047f-f906-4399-aa57-fc10404f37d4)
-
-After Sorting the lenght we will get right password and hit `302` found status code
-
-Let login using credentials we found
-
-![image](https://github.com/user-attachments/assets/f68d9cfb-c124-4b57-b8e6-ca5139ef9a49)
-
----
 > **Note:** Ensure that Burp Suite is correctly configured and linked with your browser, as all requests will be intercepted in Burp Suite through the browser.
 
 ## Lab 1: [Username Enumeration via Different Responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses)
@@ -247,3 +176,13 @@ Use the discovered username and password to log in.
 ![image](https://github.com/user-attachments/assets/f68d9cfb-c124-4b57-b8e6-ca5139ef9a49)
 
 We have successfully completed the lab!
+
+---
+
+## Lab 2: Username enumeration via subtly different responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-subtly-different-responses)
+
+![image](https://github.com/user-attachments/assets/21cdbb53-9772-4b7f-98ed-a45dbfcd3e3f)
+
+In This lab scenario If we repeat the same process as last lab We simply couldn’t find the correct username bez there are multiple names showing same length.
+
+## Accessing the Lab
