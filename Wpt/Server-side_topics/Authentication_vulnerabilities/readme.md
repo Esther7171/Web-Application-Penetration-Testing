@@ -81,9 +81,10 @@ Username enumeration occurs when attackers determine valid usernames based on we
 
 #### Indicators of Username Enumeration:
 
-1. **Distinct Error Messages**: If login failure messages differentiate between incorrect usernames and passwords, attackers can identify valid accounts.
-2. **HTTP Status Codes**: Differences in response codes can reveal valid usernames.
-3. **Response Time Discrepancies**: Websites that validate passwords only for existing usernames may introduce timing variations that attackers exploit.
+1. **Status Codes**: During brute-force attacks, most login attempts fail, returning a consistent HTTP status code. However, if a request returns a different status code, it may indicate a valid username. Secure applications should always return uniform status codes regardless of authentication success or failure.
 
-## Lab 1: [To be continued...]
+2. **Error Messages**: Some websites provide different error messages based on whether the username exists or if both the username and password are incorrect. To prevent information leakage, websites should use identical, generic messages for all authentication failures. Even minor inconsistencies, such as a misplaced character in an error message, can give attackers clues.
 
+3. **Response Times**: Authentication processes should take a uniform amount of time for all requests. If the response time varies—such as taking longer when validating a correct username before checking the password—attackers can infer valid usernames. This timing discrepancy can be further amplified by inputting excessively long passwords, making delays more noticeable.
+
+## Lab: [Username enumeration via different responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses)
