@@ -94,7 +94,7 @@ This repository provides an in-depth analysis of the latest **OWASP Top 10** vul
 - Formerly **Using Components with Known Vulnerabilities**.
 - One of the most challenging issues to test and mitigate.
 
-### 🔹 A07:2021 - Identification and Authentication Failures
+### 🔹 A07:2021 - [Identification and Authentication Failures](./Wpt/Server-side_topics/Authentication_vulnerabilities)
 - Previously **Broken Authentication**.
 - Common misconfigurations still lead to authentication security issues.
 
