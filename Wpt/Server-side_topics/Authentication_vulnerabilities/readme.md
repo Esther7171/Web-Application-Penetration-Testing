@@ -90,7 +90,7 @@ Username enumeration occurs when attackers determine valid usernames based on we
 
 > **Note:** Ensure that Burp Suite is correctly configured and linked with your browser, as all requests will be intercepted in Burp Suite through the browser.
 
-## Lab 1: [Username Enumeration via Different Responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses)
+# Lab 1: [Username Enumeration via Different Responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses)
 
 In this lab scenario, we have a provided [Username List](./Wpt/Server-side_topics/Authentication_vulnerabilities/Lab-credentials/Username-List.md) and [Password List](./Wpt/Server-side_topics/Authentication_vulnerabilities/Lab-credentials/Password-List.md). The website is vulnerable to brute-force attacks.
 
@@ -180,10 +180,61 @@ We have successfully completed the lab!
 
 ---
 
-## Lab 2: Username enumeration via subtly different responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-subtly-different-responses)
+# Lab 2: [Username enumeration via subtly different responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-subtly-different-responses)
 
 ![image](https://github.com/user-attachments/assets/21cdbb53-9772-4b7f-98ed-a45dbfcd3e3f)
 
-In This lab scenario If we repeat the same process as last lab We simply couldn’t find the correct username bez there are multiple names showing same length.
+In This lab scenario If we repeat the same process as last lab We simply couldn’t find the correct username bez there are multiple names showing same length.In this lab we need to add a keyword or a error message and grep all the request and check the right username and password that didnt show that error message. 
 
 ## Accessing the Lab
+
+![image](https://github.com/user-attachments/assets/7f1afe0f-b404-485e-8e49-61cdd13d5fac)
+
+After clicking on "My Account," a login page will appear. Since we don’t have valid credentials, enter any random username and password, such as `admin:admin`.
+
+![image](https://github.com/user-attachments/assets/582937f2-987c-46b8-b4ab-78805ce061f6)
+
+#### Step 2: Capture the Request in Burp Suite
+
+1. Open Burp Suite and turn **Intercept On**.
+2. Attempt to log in with the credentials entered in the previous step adn capture the request.
+
+![image](https://github.com/user-attachments/assets/900840d5-ae03-4f7f-9208-908616a1872c)
+
+#### step 3.  Configuring the Intruder Attack
+
+1. Send this request to intruder
+
+![image](https://github.com/user-attachments/assets/0c02625b-e3d0-4f64-94a2-5fac21929346)
+
+3. In the Intruder tab, select the username `admin` and click `Add §` to mark it as an attack position.
+
+![image](https://github.com/user-attachments/assets/4a09bf9b-a390-46c3-b787-f0bf4a62d728)
+
+4. Navigate to the **Payloads** tab, copy the [Username List](./Wpt/Server-side_topics/Authentication_vulnerabilities/Lab-credentials/Username-List.md), and paste it into the payload settings column by clicking on `Paste`.
+
+![image](https://github.com/user-attachments/assets/0d9c57f5-b680-40ad-8042-7288263a7dae)
+
+5. Step Go to login page and make a invalid attempt to login.
+
+![image](https://github.com/user-attachments/assets/6b265c22-e043-45dc-b5b0-3b034c15fe4c)
+
+6. Copy the error message
+```
+Invalid username or password.
+```
+7. After copying the error message, head to setting tab in Intruder.
+
+![image](https://github.com/user-attachments/assets/4981c4f2-9e77-43f7-8229-1e9b82f21161)
+![image](https://github.com/user-attachments/assets/aec23df6-0c0a-41fd-93ee-fedfe858bd45)
+
+8. And  Scroll down a bit and find
+
+![image](https://github.com/user-attachments/assets/c662103e-42ef-435b-8e4c-62be1f788ff6)
+
+9. Click on `clear` to clear and add that error message by click on `past`.
+
+![image](https://github.com/user-attachments/assets/8ffebab9-99c7-4d6d-94ef-b97cf1afc7b1)
+
+10. Start the attack
+11. 
