@@ -30,7 +30,7 @@ With hands-on labs sourced from various platforms, this repository will help you
 Getting started with web security can feel overwhelming, but the key is to learn step by step. We recommend progressing through topics at your own pace, practicing with labs as you go. If a challenge feels too tough, move forward and revisit it later with fresh insights. For structured guidance, check out our curated learning paths below.
 
 ### 🔥 **Server-Side Vulnerabilities**
-- [ ] [Authentication Bypass](./Wpt/Server-side_topics/Authentication_vulnerabilities)
+- [ ] [Authentication Bypass](https://github.com/Esther7171/Web-Application-Penetration-Testing/tree/main/Wpt/Server%20Side%20vulnerability/Authentication%20Vulnerabilities#broken-authentication--authentication-vulnerabilities)
 - [ ] SQL Injection (SQLi)
 - [ ] Path Traversal
 - [ ] Command Injection
