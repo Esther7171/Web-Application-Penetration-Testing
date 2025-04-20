@@ -1,6 +1,5 @@
 # <div align="center">Broken Authentication / Authentication Vulnerabilities</div>
 
-
 Authentication vulnerabilities can allow attackers to gain access to sensitive data and functionality. They also expose additional attack surfaces for further exploits. Understanding these vulnerabilities is crucial for strengthening authentication mechanisms and mitigating potential security risks.
 
 ## Topics Covered
@@ -90,94 +89,7 @@ Username enumeration occurs when attackers determine valid usernames based on we
 
 > **Note:** Ensure that Burp Suite is correctly configured and linked with your browser, as all requests will be intercepted in Burp Suite through the browser.
 
-# Lab 1: [Username Enumeration via Different Responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses)
-
-In this lab scenario, we have a provided [Username List](./Wpt/Server-side_topics/Authentication_vulnerabilities/Lab-credentials/Username-List.md) and [Password List](./Wpt/Server-side_topics/Authentication_vulnerabilities/Lab-credentials/Password-List.md). The website is vulnerable to brute-force attacks.
-
-![image](https://github.com/user-attachments/assets/3e8cb5ca-e709-4af1-9566-5ad0719a2c1b)
-
-### Accessing the Lab
-
-#### Step 1: Click on "My Account"
-
-![image](https://github.com/user-attachments/assets/25229db9-e1ea-4b36-8969-fe769b8a1615)
-
-After clicking on "My Account," a login page will appear. Since we don’t have valid credentials, enter any random username and password, such as `admin:admin`.
-
-![image](https://github.com/user-attachments/assets/60884e42-af92-41c3-a3a1-87cbf3e170d4)
-
-#### Step 2: Capture the Request in Burp Suite
-
-1. Open Burp Suite and turn **Intercept On**.
-2. Attempt to log in with the credentials entered in the previous step.
-
-![image](https://github.com/user-attachments/assets/ef62c86d-59c0-4da0-9bc9-61883563097e)
-
-3. Once the request is captured, click on `Action` and select `Send to Intruder`.
-
-![image](https://github.com/user-attachments/assets/91b02aed-24da-4267-9ceb-15620e4f9c34)
-
-#### Step 3: Configuring the Intruder Attack
-
-1. In the **Intruder** tab, select the username `admin` and click `Add §` to mark it as an attack position.
-
-![image](https://github.com/user-attachments/assets/a28c87c3-58c4-47f0-b49c-323efb4e990d)
-
-The marked position should appear as follows:
-
-![image](https://github.com/user-attachments/assets/e5882c48-91c6-48c1-95a0-11abdc83ed3d)
-
-2. Navigate to the **Payloads** tab, copy the [Username List](./Wpt/Server-side_topics/Authentication_vulnerabilities/Lab-credentials/Username-List.md), and paste it into the payload settings column by clicking on `Paste`.
-
-![image](https://github.com/user-attachments/assets/4146e469-9a04-4dfc-b945-d552a37a64f6)
-
-#### Step 4: Start the Attack
-
-Click `Start Attack` to begin brute-forcing the usernames.
-
-![image](https://github.com/user-attachments/assets/b42ca8a9-d6e6-4ec5-923d-5a1507e7703a)
-
-#### Step 5: Identifying the Valid Username
-
-1. Click on the **Length** column to sort results.
-2. Identify any response with a longer length than others.
-3. Compare the response to this payload with other responses. If other responses say `Invalid username` while this response says `Incorrect password`, the username is valid.
-
-Once the correct username is identified, proceed to brute-force the password.
-
-#### Step 6: Brute-Forcing the Password
-
-1. Close the attack and return to the **Intruder** tab.
-2. Go to the **Positions** tab, click `Clear §`, and replace the username with the valid one identified earlier.
-3. Add a payload position to the password field. The request should now look like this:
-
-![image](https://github.com/user-attachments/assets/3fa0ded8-150e-42fc-a80d-81534273d387)
-
-4. In the **Payloads** tab, click `Clear` to remove the previous wordlist.
-
-![image](https://github.com/user-attachments/assets/b14236a6-5625-486c-a777-48c389ee2246)
-
-5. Paste the [Password List](./Wpt/Server-side_topics/Authentication_vulnerabilities/Lab-credentials/Password-List.md).
-
-![image](https://github.com/user-attachments/assets/4e0b64bc-923a-43c6-a078-b716edfb2a5a)
-
-6. Click `Start Attack` to begin brute-forcing the password.
-
-![image](https://github.com/user-attachments/assets/1ee0047f-f906-4399-aa57-fc10404f37d4)
-
-#### Step 7: Identifying the Correct Password
-
-1. Sort results by **Length**.
-2. The valid password will correspond to a `302 Found` status code.
-
-#### Step 8: Logging in with the Identified Credentials
-
-Use the discovered username and password to log in.
-
-![image](https://github.com/user-attachments/assets/f68d9cfb-c124-4b57-b8e6-ca5139ef9a49)
-
-✅ We’ve successfully completed the lab!
-
+# Lab 1: [Username Enumeration via Different Responses](./Wpt/Server-side_topics/Authentication_vulnerabilities/Labs/Lab-1: Username_Enumeration_via_Different_Responses.md)
 ---
 
 # Lab 2: [Username enumeration via subtly different responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-subtly-different-responses)
