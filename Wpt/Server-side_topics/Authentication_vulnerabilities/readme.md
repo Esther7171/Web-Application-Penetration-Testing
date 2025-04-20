@@ -1,4 +1,4 @@
-0# <div align="center">Broken Authentication / Authentication Vulnerabilities</div>
+# <div align="center">Broken Authentication / Authentication Vulnerabilities</div>
 
 Authentication vulnerabilities can allow attackers to gain access to sensitive data and functionality. They also expose additional attack surfaces for further exploits. Understanding these vulnerabilities is crucial for strengthening authentication mechanisms and mitigating potential security risks.
 
