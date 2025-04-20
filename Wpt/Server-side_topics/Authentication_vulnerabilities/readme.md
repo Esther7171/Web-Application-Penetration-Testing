@@ -89,7 +89,9 @@ Username enumeration occurs when attackers determine valid usernames based on we
 
 > **Note:** Ensure that Burp Suite is correctly configured and linked with your browser, as all requests will be intercepted in Burp Suite through the browser.
 
-# Lab 1: [Username Enumeration via Different Responses](https://github.com/Esther7171/Web-Application-Penetration-Testing/blob/main/Wpt/Server-side_topics/Authentication_vulnerabilities/Labs/Lab-1:Username_Enumeration_via_Different_Responses.md#lab-1-username-enumeration-via-different-responses)
+# Lab 1: [Username Enumeration via Different Responses](Web-Application-Penetration-Testing/Wpt/Server-side_topics/Authentication_vulnerabilities/Labs/Lab-1:Username_Enumeration_via_Different_Responses.md)
+
+(https://github.com/Esther7171/Web-Application-Penetration-Testing/blob/main/Wpt/Server-side_topics/Authentication_vulnerabilities/Labs/Lab-1:Username_Enumeration_via_Different_Responses.md#lab-1-username-enumeration-via-different-responses)
 ---
 
 # Lab 2: [Username enumeration via subtly different responses](https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-subtly-different-responses)
