@@ -1,9 +1,3 @@
-```
-https://us06web.zoom.us/j/6899287498?pwd=S0MikKqFP2Bp8wS9NOKFaBQirrwOlZ.1&omn=89225717618
-```
-
-
-
 # <div align="center"> Web Application Penetration Testing </div>
 
 ![OWASP Logo](https://github.com/user-attachments/assets/fbb2cb70-6a10-41f6-82d0-2fa47a66c2d6)
