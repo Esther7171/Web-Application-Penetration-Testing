@@ -41,7 +41,7 @@ Getting started with web security can feel overwhelming, but the key is to learn
 - [ ] Race Conditions
 - [ ] Server-Side Request Forgery (SSRF)
 - [ ] XML External Entity (XXE) Injection
-- [ ] NoSQL Injection
+- [ ] [NoSQL Injection](https://github.com/Esther7171/Web-Application-Penetration-Testing/tree/main/Wpt/Server%20Side%20vulnerability/NoSQL%20injection#nosql-injection)
 - [ ] API Security Testing
 - [ ] Web Cache Deception
 
