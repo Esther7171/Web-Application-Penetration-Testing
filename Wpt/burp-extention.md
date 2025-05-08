@@ -1,0 +1,1 @@
+1. [Content type converter](https://portswigger.net/bappstore/db57ecbe2cb7446292a94aa6181c9278) =  extension to automatically convert the request method and change a URL-encoded POST request to JSON. 
