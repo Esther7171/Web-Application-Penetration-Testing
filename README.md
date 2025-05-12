@@ -14,7 +14,7 @@ Welcome to the **Web Application Penetration Testing** repository! This serves a
 
 With hands-on labs sourced from various platforms, this repository will help you gain practical experience in **Web Application Security** and **Bug Bounty Hunting**.
 
----
+--- 
 
 ## 🎯 Learning Objectives
 
