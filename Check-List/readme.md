@@ -73,7 +73,7 @@
 * [ ] Check for sensitive data in client-side code (e.g. API keys, credentials)
 * [ ] Check [WaF]((https://github.com/EnableSecurity/wafw00f) on website 
 * [ ] Check parameters in [JavaScript files](https://github.com/GerbenJavado/LinkFinder)
-* [ ] Test for subdomain takeover
+* [ ] Test for subdomain takeover and NS record
 * [ ] Check for Mail spoof, CNMAE, A and DNS record and check for zone transfer attack
 ## Secure Transmission
 * [ ] Check SSL Version, Algorithms, Key length
@@ -192,6 +192,7 @@
 * [ ] Test for all vulnerabilities with a CVSS v2 score > 4.0
 * [ ] Test for Authentication and Authorization issues
 * [ ] Test for CSRF
+* [ ] Test for Cloud Location attached to web app
 ## HTML 5
 * [ ] Test Web Messaging
 * [ ] Test for Web Storage SQL injection
