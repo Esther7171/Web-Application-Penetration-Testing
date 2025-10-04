@@ -164,6 +164,7 @@
 * [ ] Test response manipulation and check if changing the allowed request type is possible
 * [ ] Check for api respose api type and api version and api data leak
 * [ ] Test input-field validation, URL/filter bypasses, WAF/regex evasion, and recursive/double encodings (e.g., double‑encoding, null‑byte, Unicode variants) to ensure the server canonicalizes inputs, enforces whitelist validation, and blocks decoding‑based bypasses
+* [ ] Test for clickjacking by attempting to embed the application pages in an `<iframe>` (different origins and same origin) and verify framing protections: ensure `X-Frame-Options: DENY` or `SAMEORIGIN` (as appropriate) or a CSP `frame-ancestors` directive is present, sensitive pages (login/payment/settings) cannot be framed, and sandboxing or frame‑busting is applied where needed
 ## Denial of Service
 * [ ] Test for anti-automation
 * [ ] Test for account lockout
