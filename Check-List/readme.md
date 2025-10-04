@@ -59,6 +59,9 @@
 * [ ] Identify all hostnames and ports
 * [ ] Identify third-party hosted content
 * [ ] Identify Debug parameters
+* [ ] Test Banner grabbing
+* [ ] Identify cookie type
+* [ ] By refreshing page check for network tab and config
 ## Configuration Management
 * [ ] Check for commonly used application and administrative URLs
 * [ ] Check for old, backup and unreferenced files
@@ -68,6 +71,8 @@
 * [ ] Test for policies (e.g. Flash, Silverlight, robots)
 * [ ] Test for non-production data in live environment, and vice-versa
 * [ ] Check for sensitive data in client-side code (e.g. API keys, credentials)
+* [ ] Check [WaF]((https://github.com/EnableSecurity/wafw00f) on website 
+* [ ] Check parameters in [JavaScript files](https://github.com/GerbenJavado/LinkFinder)
 ## Secure Transmission
 * [ ] Check SSL Version, Algorithms, Key length
 * [ ] Check for Digital Certificate Validity (Duration, Signature and CN)
