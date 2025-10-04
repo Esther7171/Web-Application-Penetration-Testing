@@ -37,7 +37,7 @@
 ### Manual checking
 * [ ] Shodan
 * [ ] Censys
-* [ ] Google dorks
+* [ ] Google [dorks](https://dorks.faisalahmed.me)
 * [ ] Pastebin
 * [ ] Github
 * [ ] OSINT
@@ -100,6 +100,7 @@
 * [ ] Test for user-accessible authentication history
 * [ ] Test for out-of channel notification of account lockouts and successful password changes
 * [ ] Test for consistent authentication across applications with shared authentication schema / SSO
+* [ ] Test credential entry with correct and incorrect username/password combinations, and verify the responses and response codes.
 ## Session Management
 * [ ] Establish how session management is handled in the application (eg, tokens in cookies, token in URL)
 * [ ] Check session tokens for cookie flags (httpOnly and secure)
@@ -144,6 +145,7 @@
 * [ ] Test for Overflow (Stack, Heap and Integer)
 * [ ] Test for Format String
 * [ ] Test for incubated vulnerabilities
+* [ ] Test for HTTP files
 * [ ] Test for HTTP Splitting/Smuggling
 * [ ] Test for HTTP Verb Tampering
 * [ ] Test for Open Redirection
@@ -155,6 +157,7 @@
 * [ ] Test for auto-binding
 * [ ] Test for Mass Assignment
 * [ ] Test for NULL/Invalid Session Cookie
+* [ ] Test response manipulation and check if changing the allowed request type is possible
 ## Denial of Service
 * [ ] Test for anti-automation
 * [ ] Test for account lockout
