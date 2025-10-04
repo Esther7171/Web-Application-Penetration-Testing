@@ -73,7 +73,7 @@
 * [ ] Check for sensitive data in client-side code (e.g. API keys, credentials)
 * [ ] Check [WaF]((https://github.com/EnableSecurity/wafw00f) on website 
 * [ ] Check parameters in [JavaScript files](https://github.com/GerbenJavado/LinkFinder)
-* [ ] Test for subdomain takeover and NS record
+* [ ] Test for [subdomain takeover](https://github.com/PentestPad/subzy) and NS record
 * [ ] Check for Mail spoof, CNMAE, A and DNS record and check for zone transfer attack
 ## Secure Transmission
 * [ ] Check SSL Version, Algorithms, Key length
