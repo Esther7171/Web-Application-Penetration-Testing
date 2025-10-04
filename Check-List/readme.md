@@ -157,12 +157,13 @@
 * [ ] Test for Remote File Inclusion
 * [ ] Compare client-side and server-side validation rules
 * [ ] Test for NoSQL injection
-* [ ] Test for HTTP parameter pollution
+* [ ] Test for HTTP,Json parameter pollution
 * [ ] Test for auto-binding
 * [ ] Test for Mass Assignment
 * [ ] Test for NULL/Invalid Session Cookie
 * [ ] Test response manipulation and check if changing the allowed request type is possible
 * [ ] Check for api respose api type and api version and api data leak
+* [ ] Test input-field validation, URL/filter bypasses, WAF/regex evasion, and recursive/double encodings (e.g., double‑encoding, null‑byte, Unicode variants) to ensure the server canonicalizes inputs, enforces whitelist validation, and blocks decoding‑based bypasses
 ## Denial of Service
 * [ ] Test for anti-automation
 * [ ] Test for account lockout
@@ -182,6 +183,7 @@
 * [ ] Check for weak algorithms usage
 * [ ] Check for proper use of salting
 * [ ] Check for randomness functions
+* [ ] Test for improper decoding of cookies, path segments, and request parameters (e.g., URL/base64/double‑encoding, null‑byte, Unicode variants). Ensure the server canonicalizes inputs before authorization/lookup, rejects decoding‑based bypasses, and does not expose sensitive data when decoded. Also verify cookie handling remains secure (HttpOnly, Secure, SameSite) and decoded values cannot be abused to access other users’ data
 ## Risky Functionality - File Uploads
 * [ ] Test that acceptable file types are whitelisted
 * [ ] Test that file size limits, upload frequency and total file counts are defined and are enforced
@@ -271,6 +273,7 @@ Checklist of the most important security countermeasures when designing, testing
 - [ ] Test file uploads request.
 - [ ]  Cross-site Request Forgery (CSRF) — If your API accepts the same authentication configuration that your interactive users use, then you might be vulnerable to a CSRF attack. For example, if your interactive users login and get a “SESSIONID” cookie, and that cookie can also be used to invoke API requests, then a carefully composed HTML form could make unexpected API requests on behalf of your users.
 - [ ]  IDOR in body/header is more vulnerable than ID in URL. For example: {“id”:{“id”:111}}
+- [ ] Test for IDOR by manipulating resource identifiers in URLs, JSON bodies, arrays, headers, cookies, API versions, and case/encoding variants, as well as attempting access with guessable or other users’ IDs, ensuring server-side authorization consistently enforces ownership and prevents unauthorized access 
 
 
 ## Processing
