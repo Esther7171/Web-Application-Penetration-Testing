@@ -121,6 +121,8 @@
 * [ ] Test for vertical Access control problems (a.k.a. Privilege Escalation)
 * [ ] Test for horizontal Access control problems (between two users at the same privilege level)
 * [ ] Test for missing authorization
+* [ ] Test that the same name or email cannot be registered
+* [ ] Ensure temporary emails are rejected.
 ## Data Validation
 * [ ] Test for Reflected Cross Site Scripting
 * [ ] Test for Stored Cross Site Scripting
@@ -164,7 +166,8 @@
 * [ ] Test for lack of non-repudiation
 * [ ] Test for trust relationships
 * [ ] Test for integrity of data
-* [ ] Test segregation of duties
+* [ ] Test for Parameter Tampering
+* [ ] Test segregation of dutiess
 ## Cryptography
 * [ ] Check if data which should be encrypted is not
 * [ ] Check for wrong algorithms usage depending on context
