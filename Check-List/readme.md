@@ -42,6 +42,8 @@
 * [ ] Github
 * [ ] OSINT
 ## Information Gathering
+* [ ] Test for running services, web technologies, total subdomains, and directory contents.
+* [ ] Check for AI integration or chatbot functionality for data extraction testing.
 * [ ] Manually explore the site
 * [ ] Spider/crawl for missed or hidden content
 * [ ] Check for files that expose content, such as `robots.txt`, `sitemap.xml`, `.DS_Store`
@@ -149,6 +151,7 @@
 * [ ] Test for account lockout
 * [ ] Test for HTTP protocol DoS
 * [ ] Test for SQL wildcard DoS
+* [ ] Test upload lottapixel image
 ## Business Logic
 * [ ] Test for feature misuse
 * [ ] Test for lack of non-repudiation
